@@ -4,7 +4,7 @@ class OneButtonViewModel {
   final OneButtonSize size;
   final OneButtonHierarchy hierarchy;
   final String? text;
-  final OneButtonAlignType alignment;
+  final TextAlign alignment;
   final String? leadingSVG;
   final String? leadingImage;
   final dynamic leadingIcon;
@@ -21,7 +21,7 @@ class OneButtonViewModel {
     this.size = OneButtonSize.lg,
     this.hierarchy = OneButtonHierarchy.primary,
     this.text,
-    this.alignment = OneButtonAlignType.center,
+    this.alignment = TextAlign.center,
     this.leadingSVG,
     this.leadingImage,
     this.leadingIcon,

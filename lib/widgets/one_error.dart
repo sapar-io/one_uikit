@@ -14,14 +14,3 @@ class OneError extends StatelessWidget {
     return Text(error.toString());
   }
 }
-
-Widget errorFirestoreList(
-  BuildContext context,
-  Object? error,
-  StackTrace stackTrace,
-) {
-  return OneError(
-    error: error,
-    stackTrace: stackTrace,
-  );
-}

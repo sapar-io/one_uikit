@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:one_uikit/kit/button/data/one_button_align_enum.dart';
 import 'package:one_uikit/one_uikit.dart';
-import 'package:one_uikit/widgets/one_image.dart';
 
 part 'data/one_button_destructive_hierarchy.dart';
 part 'data/one_button_hierarchy.dart';
@@ -109,7 +107,7 @@ class _OneButtonState extends State<OneButton> {
       padding: const EdgeInsets.symmetric(horizontal: OneSpace.s2),
       child: Text(
         widget.viewModel.text ?? '',
-        textAlign: widget.viewModel.alignment.textAlign,
+        textAlign: widget.viewModel.alignment,
         softWrap: true, // Разрешаем перенос текста
         maxLines: null, // Разрешаем неограниченное количество строк
         overflow: TextOverflow.visible,
@@ -128,9 +126,9 @@ class _OneButtonState extends State<OneButton> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment:
-          widget.viewModel.alignment == OneButtonAlignType.left
+          widget.viewModel.alignment == TextAlign.left
               ? MainAxisAlignment.start
-              : widget.viewModel.alignment == OneButtonAlignType.right
+              : widget.viewModel.alignment == TextAlign.right
                   ? MainAxisAlignment.end
                   : MainAxisAlignment.center,
       children: [
