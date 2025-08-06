@@ -1,39 +1,98 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# One UI Kit
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A comprehensive Flutter UI Kit with reusable components, icons, and utilities for 1APP project.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- 🎨 **Rich Icon Collection** - 1000+ SVG icons organized by categories
+- 🧩 **Reusable Components** - Custom widgets for common UI patterns
+- 🔧 **Utility Extensions** - Helper methods for common tasks
+- �� **Error Handling** - Built-in error display widgets
+- �� **SnackBar Helpers** - Easy-to-use notification system
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this to your package's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  one_uikit: ^0.0.1
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Import the package
 
 ```dart
-const like = 'sample';
+import 'package:one_uikit/one_uikit.dart';
 ```
+
+### Show SnackBar notifications
+
+```dart
+// Success message
+context.showSnackBar(message: 'Operation completed successfully!');
+
+// Error message
+context.showSnackBar(
+  message: 'Something went wrong!', 
+  isError: true
+);
+```
+
+### Display errors
+
+```dart
+OneError(
+  error: exception,
+  stackTrace: stackTrace,
+);
+```
+
+### Use icons
+
+```dart
+// Icons are available in assets/icons/ directory
+// You can use them with SvgPicture.asset()
+SvgPicture.asset('packages/one_uikit/assets/icons/general/activity.svg')
+```
+
+## Available Components
+
+- **OneError** - Error display widget with logging
+- **SnackBar Helper** - Extension methods for showing notifications
+
+## Available Icons
+
+The package includes 1000+ SVG icons organized in categories:
+
+- �� **Alerts** - Error, warning, and notification icons
+- ➡️ **Arrows** - Directional and navigation icons  
+- 📊 **Charts** - Data visualization icons
+- 💬 **Communication** - Message and phone icons
+- 💻 **Development** - Code and technical icons
+- ✏️ **Editor** - Text editing and formatting icons
+- 🎓 **Education** - Learning and academic icons
+- 📁 **Files** - Document and file management icons
+- 💰 **Finance** - Banking and financial icons
+- 🌐 **General** - Common and utility icons
+- 🖼️ **Images** - Photo and media icons
+- 📐 **Layout** - Design and layout icons
+- 🗺️ **Maps** - Location and transportation icons
+- 🎵 **Media** - Audio and video icons
+- 🔒 **Security** - Authentication and security icons
+- 🔷 **Shapes** - Geometric and design icons
+- 🌍 **Social** - Social media and networking icons
+- ⏰ **Time** - Clock and schedule icons
+- 👥 **Users** - User and profile icons
+- 🌤️ **Weather** - Weather and climate icons
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- **GitHub**: https://github.com/yourusername/one_uikit
+- **Issues**: https://github.com/yourusername/one_uikit/issues
+- **Documentation**: https://github.com/yourusername/one_uikit#readme
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
