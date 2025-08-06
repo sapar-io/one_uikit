@@ -38,7 +38,7 @@ extension SocialNetworksEnumExtension
   }
 }
 
-enum ContentBlockSocialNetworkType {
+enum SocialNetworkTypeEnum {
   // * Мессенджеры
   whatsapp, // +
   telegram, // +
@@ -112,29 +112,29 @@ enum ContentBlockSocialNetworkType {
 }
 
 extension ContentBlockSocialNetworkTypeExtension
-    on ContentBlockSocialNetworkType {
+    on SocialNetworkTypeEnum {
   SocialNetworksEnum get categoryType {
     switch (this) {
-      case ContentBlockSocialNetworkType.whatsapp:
-      case ContentBlockSocialNetworkType.telegram:
+      case SocialNetworkTypeEnum.whatsapp:
+      case SocialNetworkTypeEnum.telegram:
       // case ContentBlockSocialNetworkType.viber:
-      case ContentBlockSocialNetworkType.signal:
-      case ContentBlockSocialNetworkType.wechat:
+      case SocialNetworkTypeEnum.signal:
+      case SocialNetworkTypeEnum.wechat:
       // case ContentBlockSocialNetworkType.line:
-      case ContentBlockSocialNetworkType.skype:
-      case ContentBlockSocialNetworkType.discord:
-      case ContentBlockSocialNetworkType.messenger:
+      case SocialNetworkTypeEnum.skype:
+      case SocialNetworkTypeEnum.discord:
+      case SocialNetworkTypeEnum.messenger:
         return SocialNetworksEnum.messengers;
-      case ContentBlockSocialNetworkType.instagram:
-      case ContentBlockSocialNetworkType.facebook:
-      case ContentBlockSocialNetworkType.vk:
-      case ContentBlockSocialNetworkType.linkedin:
-      case ContentBlockSocialNetworkType.tiktok:
-      case ContentBlockSocialNetworkType.twitter:
-      case ContentBlockSocialNetworkType.pinterest:
-      case ContentBlockSocialNetworkType.snapchat:
-      case ContentBlockSocialNetworkType.reddit:
-      case ContentBlockSocialNetworkType.tumblr:
+      case SocialNetworkTypeEnum.instagram:
+      case SocialNetworkTypeEnum.facebook:
+      case SocialNetworkTypeEnum.vk:
+      case SocialNetworkTypeEnum.linkedin:
+      case SocialNetworkTypeEnum.tiktok:
+      case SocialNetworkTypeEnum.twitter:
+      case SocialNetworkTypeEnum.pinterest:
+      case SocialNetworkTypeEnum.snapchat:
+      case SocialNetworkTypeEnum.reddit:
+      case SocialNetworkTypeEnum.tumblr:
         // case ContentBlockSocialNetworkType.quora:
         // case ContentBlockSocialNetworkType.weibo:
         // case ContentBlockSocialNetworkType.renren:
@@ -142,11 +142,11 @@ extension ContentBlockSocialNetworkTypeExtension
         return SocialNetworksEnum.socialNetworks;
       // case ContentBlockSocialNetworkType.github:
       // case ContentBlockSocialNetworkType.stackoverflow:
-      case ContentBlockSocialNetworkType.behance:
-      case ContentBlockSocialNetworkType.dribbble:
+      case SocialNetworkTypeEnum.behance:
+      case SocialNetworkTypeEnum.dribbble:
         return SocialNetworksEnum.professionalNetworks;
-      case ContentBlockSocialNetworkType.spotify:
-      case ContentBlockSocialNetworkType.soundcloud:
+      case SocialNetworkTypeEnum.spotify:
+      case SocialNetworkTypeEnum.soundcloud:
         // case ContentBlockSocialNetworkType.youtubeMusic:
         // case ContentBlockSocialNetworkType.yandexMusic:
         // case ContentBlockSocialNetworkType.appleMusic:
@@ -154,10 +154,10 @@ extension ContentBlockSocialNetworkTypeExtension
         // case ContentBlockSocialNetworkType.pandora:
         // case ContentBlockSocialNetworkType.deezer:
         return SocialNetworksEnum.music;
-      case ContentBlockSocialNetworkType.twitch:
-      case ContentBlockSocialNetworkType.vimeo:
+      case SocialNetworkTypeEnum.twitch:
+      case SocialNetworkTypeEnum.vimeo:
       // case ContentBlockSocialNetworkType.dailymotion:
-      case ContentBlockSocialNetworkType.youtube:
+      case SocialNetworkTypeEnum.youtube:
         return SocialNetworksEnum.video;
       // case ContentBlockSocialNetworkType.medium:
       // case ContentBlockSocialNetworkType.wordpress:
@@ -169,9 +169,9 @@ extension ContentBlockSocialNetworkTypeExtension
       // case ContentBlockSocialNetworkType.flickr:
       // case ContentBlockSocialNetworkType.px500:
       //   return ContentBlockSocialNetworkCategoryType.photo;
-      case ContentBlockSocialNetworkType.email:
-      case ContentBlockSocialNetworkType.phone:
-      case ContentBlockSocialNetworkType.link:
+      case SocialNetworkTypeEnum.email:
+      case SocialNetworkTypeEnum.phone:
+      case SocialNetworkTypeEnum.link:
         return SocialNetworksEnum.contacts;
       // case ContentBlockSocialNetworkType.patreon:
       // case ContentBlockSocialNetworkType.goodreads:
@@ -181,45 +181,45 @@ extension ContentBlockSocialNetworkTypeExtension
 
   String get title {
     switch (this) {
-      case ContentBlockSocialNetworkType.whatsapp:
+      case SocialNetworkTypeEnum.whatsapp:
         return "WhatsApp";
-      case ContentBlockSocialNetworkType.telegram:
+      case SocialNetworkTypeEnum.telegram:
         return "Telegram";
       // case ContentBlockSocialNetworkType.viber:
       //   return "Viber";
-      case ContentBlockSocialNetworkType.signal:
+      case SocialNetworkTypeEnum.signal:
         return "Signal";
-      case ContentBlockSocialNetworkType.wechat:
+      case SocialNetworkTypeEnum.wechat:
         return "WeChat";
       // case ContentBlockSocialNetworkType.line:
       //   return "LINE";
-      case ContentBlockSocialNetworkType.skype:
+      case SocialNetworkTypeEnum.skype:
         return "Skype";
-      case ContentBlockSocialNetworkType.discord:
+      case SocialNetworkTypeEnum.discord:
         return "Discord";
-      case ContentBlockSocialNetworkType.messenger:
+      case SocialNetworkTypeEnum.messenger:
         return "Messenger";
-      case ContentBlockSocialNetworkType.instagram:
+      case SocialNetworkTypeEnum.instagram:
         return "Instagram";
-      case ContentBlockSocialNetworkType.facebook:
+      case SocialNetworkTypeEnum.facebook:
         return "Facebook";
-      case ContentBlockSocialNetworkType.youtube:
+      case SocialNetworkTypeEnum.youtube:
         return "YouTube";
-      case ContentBlockSocialNetworkType.vk:
+      case SocialNetworkTypeEnum.vk:
         return "VK";
-      case ContentBlockSocialNetworkType.linkedin:
+      case SocialNetworkTypeEnum.linkedin:
         return "LinkedIn";
-      case ContentBlockSocialNetworkType.tiktok:
+      case SocialNetworkTypeEnum.tiktok:
         return "TikTok";
-      case ContentBlockSocialNetworkType.twitter:
+      case SocialNetworkTypeEnum.twitter:
         return "X (Twitter)";
-      case ContentBlockSocialNetworkType.pinterest:
+      case SocialNetworkTypeEnum.pinterest:
         return "Pinterest";
-      case ContentBlockSocialNetworkType.snapchat:
+      case SocialNetworkTypeEnum.snapchat:
         return "Snapchat";
-      case ContentBlockSocialNetworkType.reddit:
+      case SocialNetworkTypeEnum.reddit:
         return "Reddit";
-      case ContentBlockSocialNetworkType.tumblr:
+      case SocialNetworkTypeEnum.tumblr:
         return "Tumblr";
       // case ContentBlockSocialNetworkType.quora:
       //   return "Quora";
@@ -233,13 +233,13 @@ extension ContentBlockSocialNetworkTypeExtension
       //   return "GitHub";
       // case ContentBlockSocialNetworkType.stackoverflow:
       //   return "Stack Overflow";
-      case ContentBlockSocialNetworkType.behance:
+      case SocialNetworkTypeEnum.behance:
         return "Behance";
-      case ContentBlockSocialNetworkType.dribbble:
+      case SocialNetworkTypeEnum.dribbble:
         return "Dribbble";
-      case ContentBlockSocialNetworkType.spotify:
+      case SocialNetworkTypeEnum.spotify:
         return "Spotify";
-      case ContentBlockSocialNetworkType.soundcloud:
+      case SocialNetworkTypeEnum.soundcloud:
         return "SoundCloud";
       // case ContentBlockSocialNetworkType.youtubeMusic:
       //   return "YouTube Music";
@@ -253,9 +253,9 @@ extension ContentBlockSocialNetworkTypeExtension
       //   return "Pandora";
       // case ContentBlockSocialNetworkType.deezer:
       //   return "Deezer";
-      case ContentBlockSocialNetworkType.twitch:
+      case SocialNetworkTypeEnum.twitch:
         return "Twitch";
-      case ContentBlockSocialNetworkType.vimeo:
+      case SocialNetworkTypeEnum.vimeo:
         return "Vimeo";
       // case ContentBlockSocialNetworkType.dailymotion:
       //   return "Dailymotion";
@@ -269,11 +269,11 @@ extension ContentBlockSocialNetworkTypeExtension
       //   return "Flickr";
       // case ContentBlockSocialNetworkType.px500:
       //   return "500px";
-      case ContentBlockSocialNetworkType.email:
+      case SocialNetworkTypeEnum.email:
         return "Email";
-      case ContentBlockSocialNetworkType.phone:
+      case SocialNetworkTypeEnum.phone:
         return "Телефон";
-      case ContentBlockSocialNetworkType.link:
+      case SocialNetworkTypeEnum.link:
         return "Ссылка";
       // case ContentBlockSocialNetworkType.slack:
       //   return "Slack";
@@ -288,9 +288,9 @@ extension ContentBlockSocialNetworkTypeExtension
 
   String get hintText {
     switch (this) {
-      case ContentBlockSocialNetworkType.email:
+      case SocialNetworkTypeEnum.email:
         return "Введите email";
-      case ContentBlockSocialNetworkType.phone:
+      case SocialNetworkTypeEnum.phone:
         return "Введите номер телефона";
       default:
         return "Введите ссылку";

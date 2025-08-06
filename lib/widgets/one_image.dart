@@ -17,7 +17,6 @@ class OneImage extends StatelessWidget {
     this.isAsset = false,
     this.isCached = false,
     this.isUser = false,
-    this.isOpenable = false,
     this.showPlus = false,
     this.boxFit = BoxFit.cover,
     this.onTap,
@@ -34,7 +33,6 @@ class OneImage extends StatelessWidget {
   final bool isCached;
   final bool isUser;
   final BoxFit boxFit;
-  final bool isOpenable;
   final bool showPlus;
   final VoidCallback? onTap;
 
@@ -58,7 +56,7 @@ class OneImage extends StatelessWidget {
   }
 
   Widget _clickableBuild(BuildContext context, String defaultImage) {
-    final clickable = (isOpenable || onTap != null) && imageUrl != null;
+    final clickable = onTap != null && imageUrl != null;
 
     return clickable
         ? MouseRegion(
@@ -111,7 +109,7 @@ class OneImage extends StatelessWidget {
                 ),
               ),
             ),
-          if (isOpenable && showPlus) ...[
+          if (showPlus) ...[
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(

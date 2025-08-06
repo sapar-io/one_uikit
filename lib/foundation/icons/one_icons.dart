@@ -28,7 +28,7 @@ class OneIcons {
     );
   }
 
-// Обновленный метод для получения цветового фильтра иконки
+  // Обновленный метод для получения цветового фильтра иконки
   static ColorFilter? _getIconColorFilter(BuildContext? context, Color? color) {
     Color? iconColor = _getIconColor(context, color);
     return iconColor != null
@@ -71,7 +71,7 @@ class OneIcons {
     if (icon is EducationIcon) return IconCategory.education;
     if (icon is MapsTravelIcon) return IconCategory.maps;
     if (icon is WeatherIcon) return IconCategory.weather;
-    if (icon is SocialNetworksEnum) return IconCategory.social;
+    if (icon is SocialNetworkTypeEnum) return IconCategory.social;
     throw ArgumentError('Неизвестный тип иконки');
   }
 
@@ -90,9 +90,13 @@ class OneIcons {
   static String _formatIconName(String name) {
     return name
         .replaceAllMapped(
-            RegExp(r'([A-Z])'), (Match m) => '-${m[1]!.toLowerCase()}')
-        .replaceAllMapped(RegExp(r'(\d+)'),
-            (Match m) => '-${m[1]}') // Добавляем дефис перед числами
+          RegExp(r'([A-Z])'),
+          (Match m) => '-${m[1]!.toLowerCase()}',
+        )
+        .replaceAllMapped(
+          RegExp(r'(\d+)'),
+          (Match m) => '-${m[1]}',
+        ) // Добавляем дефис перед числами
         .replaceAll(RegExp(r'^-'), '') // Удаляем дефис в начале, если он есть
         .replaceAll(RegExp(r'--'), '-'); // Заменяем двойные дефисы на одинарные
   }
