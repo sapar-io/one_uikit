@@ -161,7 +161,7 @@ class OneTypography {
   }) {
     final textScaler = MediaQuery.textScalerOf(context);
     return TextStyle(
-      fontFamily: 'Inter',
+      // fontFamily: 'Montserrat',
       fontSize: textScaler.scale(fontSize),
       height: lineHeight / fontSize,
       fontWeight: fontWeight,

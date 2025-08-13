@@ -10,6 +10,7 @@ class OneCardContent extends StatelessWidget {
     this.child,
     this.leading,
     this.trailing,
+    this.padding,
     this.imageUrl,
     this.showImagePlaceholder = false,
     this.isCached = false,
@@ -21,6 +22,7 @@ class OneCardContent extends StatelessWidget {
     this.badges,
     this.isDescriptionSmall = false,
     this.isSelected = false,
+    this.borderRadius,
   });
 
   final String title;
@@ -29,6 +31,7 @@ class OneCardContent extends StatelessWidget {
   final Widget? leading;
   final Widget? trailing;
   final String? imageUrl;
+  final EdgeInsets? padding;
   final bool isCached;
   final bool isCover;
   final bool isUser;
@@ -40,6 +43,7 @@ class OneCardContent extends StatelessWidget {
   final List<BadgeViewModel>? badges;
   final bool isDescriptionSmall;
   final bool isSelected;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +53,8 @@ class OneCardContent extends StatelessWidget {
         isSelected: isSelected,
         onTap: onTap,
         onDoubleTap: onDoubleTap,
-        padding: const EdgeInsets.all(16),
+        padding: padding,
+        borderRadius: borderRadius,
         child: Row(
           children: [
             if (leading != null)

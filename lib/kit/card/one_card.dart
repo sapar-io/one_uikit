@@ -12,6 +12,7 @@ class OneCard extends StatelessWidget {
     this.padding,
     this.isSelected = false,
     this.borderColor,
+    this.borderRadius,
   });
 
   final Widget child;
@@ -22,6 +23,7 @@ class OneCard extends StatelessWidget {
   final EdgeInsets? padding;
   final bool isSelected;
   final Color? borderColor;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +55,11 @@ class OneCard extends StatelessWidget {
     required BuildContext context,
     required EdgeInsets padding,
   }) {
-    const borderRadius = OneRadius.xl;
+    final radius = borderRadius ?? OneRadius.xl;
 
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: BorderRadius.circular(radius),
         boxShadow: withShadow ? context.shadow.get(OneShadowSize.xs) : null,
         border: isSelected
             ? Border.all(
@@ -74,7 +76,7 @@ class OneCard extends StatelessWidget {
           onTap: onTap,
           onDoubleTap: onDoubleTap,
           onLongPress: onLongPress,
-          borderRadius: BorderRadius.circular(borderRadius),
+          borderRadius: BorderRadius.circular(radius),
           child: Ink(
             decoration: BoxDecoration(
               border: isSelected
@@ -84,7 +86,7 @@ class OneCard extends StatelessWidget {
                       width: 1,
                     ),
               color: context.color.background(BackgroundColorType.primaryAlt),
-              borderRadius: BorderRadius.circular(borderRadius),
+              borderRadius: BorderRadius.circular(radius),
             ),
             child: Container(
               padding: padding,
