@@ -16,7 +16,7 @@ class OneIcons {
     Color? color,
     BuildContext? context,
   }) {
-    IconCategory category = _getCategoryFromIcon(icon);
+    IconCategory category = getCategoryFromIcon(icon);
     final iconName = _getIconName(icon);
 
     return SvgPicture.asset(
@@ -51,7 +51,7 @@ class OneIcons {
   }
 
   // Приватный метод для определения категории иконки
-  static IconCategory _getCategoryFromIcon(dynamic icon) {
+  static IconCategory getCategoryFromIcon(dynamic icon) {
     if (icon is GeneralIcon) return IconCategory.general;
     if (icon is ArrowsIcon) return IconCategory.arrows;
     if (icon is ChartsIcon) return IconCategory.charts;
