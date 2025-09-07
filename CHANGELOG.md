@@ -1,3 +1,9 @@
+## 0.1.2
+
+* Fix icon asset paths to work correctly with packages
+* Icons now use 'packages/one_uikit/assets/icons/' path format
+* Resolves "Unable to load asset" errors in external projects
+
 ## 0.1.1
 
 * Add comprehensive icons usage documentation (ICONS_USAGE.md)
