@@ -17,6 +17,9 @@ class OneError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final errorMessage = error?.toString() ?? 'Неизвестная ошибка';
+    debugPrint('errorMessage: $errorMessage');
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(

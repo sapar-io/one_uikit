@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:one_uikit/one_uikit.dart';
-import 'package:one_uikit/widgets/async_value_widget.dart';
 
 class AsyncValueList<T> extends StatelessWidget {
   const AsyncValueList({
