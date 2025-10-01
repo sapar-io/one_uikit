@@ -17,6 +17,7 @@ class OneCardContent extends StatelessWidget {
     this.isCover = true,
     this.isUser = false,
     this.onTap,
+    this.onLongPress,
     this.onDoubleTap,
     this.isBottomPadding = true,
     this.badges,
@@ -38,6 +39,7 @@ class OneCardContent extends StatelessWidget {
   final bool showImagePlaceholder;
   final Widget? child;
   final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
   final VoidCallback? onDoubleTap;
   final bool isBottomPadding;
   final List<BadgeViewModel>? badges;
@@ -53,6 +55,7 @@ class OneCardContent extends StatelessWidget {
         isSelected: isSelected,
         onTap: onTap,
         onDoubleTap: onDoubleTap,
+        onLongPress: onLongPress,
         padding: padding,
         borderRadius: borderRadius,
         child: Row(

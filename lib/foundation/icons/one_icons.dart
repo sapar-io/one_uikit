@@ -83,7 +83,7 @@ class OneIcons {
   // Приватный метод для получения пути к иконке
   static String _getIconPath(IconCategory category, String iconName) {
     String formattedIconName = _formatIconName(iconName);
-    return 'packages/one_uikit/assets/icons/${category.name}/$formattedIconName.svg';
+    return 'assets/icons/${category.name}/$formattedIconName.svg';
   }
 
   // Приватный метод для форматирования имени иконки из camelCase в kebab-case
