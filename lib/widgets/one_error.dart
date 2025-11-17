@@ -49,13 +49,13 @@ class OneError extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          gapH8,
           Text(
             error?.toString() ?? 'Неизвестная ошибка',
             style: context.typography.textMdRegular,
           ),
           if (onRetry != null) ...[
-            const SizedBox(height: 12),
+            gapH12,
             OneButton(
               viewModel: OneButtonViewModel(
                 text: 'Повторить',

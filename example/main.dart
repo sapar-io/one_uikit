@@ -41,7 +41,7 @@ class MyHomePage extends StatelessWidget {
               },
               child: const Text('Show Success SnackBar'),
             ),
-            const SizedBox(height: 16),
+            gapH16,
             ElevatedButton(
               onPressed: () {
                 context.showSnackBar(
@@ -51,12 +51,12 @@ class MyHomePage extends StatelessWidget {
               },
               child: const Text('Show Error SnackBar'),
             ),
-            const SizedBox(height: 32),
+            gapH32,
             const Text(
               'Error Widget Example:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 16),
+            gapH16,
             OneError(
               error: Exception('This is a sample error'),
               stackTrace: StackTrace.current,

@@ -1,3 +1,14 @@
+## 0.1.6
+
+* 🎨 **BREAKING**: Updated color system to match Untitled UI Figma Kit specifications
+* Fixed Gray (light mode) color values to match Figma exactly
+* Fixed Gray (dark mode) color values to match Figma exactly
+* Added all missing secondary colors to OneColorsVariables (yellow, rose, violet, teal, cyan, moss, greenLight, green)
+* Added comprehensive color documentation in COLORS.md
+* Updated README with link to color documentation
+* All colors now have exact WCAG contrast ratios from Figma
+* Improved dark mode color support with proper semantic mappings
+
 ## 0.1.2
 
 * Fix icon asset paths to work correctly with packages

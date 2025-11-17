@@ -374,4 +374,100 @@ class OneColorsVariables {
   static Color orange800 = OneColors.orange[800]!;
   static Color orange900 = OneColors.orange[900]!;
   static Color orange950 = OneColors.orange[950]!;
+
+  static Color yellow50 = OneColors.yellow[50]!;
+  static Color yellow100 = OneColors.yellow[100]!;
+  static Color yellow200 = OneColors.yellow[200]!;
+  static Color yellow300 = OneColors.yellow[300]!;
+  static Color yellow400 = OneColors.yellow[400]!;
+  static Color yellow500 = OneColors.yellow[500]!;
+  static Color yellow600 = OneColors.yellow[600]!;
+  static Color yellow700 = OneColors.yellow[700]!;
+  static Color yellow800 = OneColors.yellow[800]!;
+  static Color yellow900 = OneColors.yellow[900]!;
+  static Color yellow950 = OneColors.yellow[950]!;
+
+  static Color rose50 = OneColors.rose[50]!;
+  static Color rose100 = OneColors.rose[100]!;
+  static Color rose200 = OneColors.rose[200]!;
+  static Color rose300 = OneColors.rose[300]!;
+  static Color rose400 = OneColors.rose[400]!;
+  static Color rose500 = OneColors.rose[500]!;
+  static Color rose600 = OneColors.rose[600]!;
+  static Color rose700 = OneColors.rose[700]!;
+  static Color rose800 = OneColors.rose[800]!;
+  static Color rose900 = OneColors.rose[900]!;
+  static Color rose950 = OneColors.rose[950]!;
+
+  static Color violet50 = OneColors.violet[50]!;
+  static Color violet100 = OneColors.violet[100]!;
+  static Color violet200 = OneColors.violet[200]!;
+  static Color violet300 = OneColors.violet[300]!;
+  static Color violet400 = OneColors.violet[400]!;
+  static Color violet500 = OneColors.violet[500]!;
+  static Color violet600 = OneColors.violet[600]!;
+  static Color violet700 = OneColors.violet[700]!;
+  static Color violet800 = OneColors.violet[800]!;
+  static Color violet900 = OneColors.violet[900]!;
+  static Color violet950 = OneColors.violet[950]!;
+
+  static Color teal50 = OneColors.teal[50]!;
+  static Color teal100 = OneColors.teal[100]!;
+  static Color teal200 = OneColors.teal[200]!;
+  static Color teal300 = OneColors.teal[300]!;
+  static Color teal400 = OneColors.teal[400]!;
+  static Color teal500 = OneColors.teal[500]!;
+  static Color teal600 = OneColors.teal[600]!;
+  static Color teal700 = OneColors.teal[700]!;
+  static Color teal800 = OneColors.teal[800]!;
+  static Color teal900 = OneColors.teal[900]!;
+  static Color teal950 = OneColors.teal[950]!;
+
+  static Color cyan50 = OneColors.cyan[50]!;
+  static Color cyan100 = OneColors.cyan[100]!;
+  static Color cyan200 = OneColors.cyan[200]!;
+  static Color cyan300 = OneColors.cyan[300]!;
+  static Color cyan400 = OneColors.cyan[400]!;
+  static Color cyan500 = OneColors.cyan[500]!;
+  static Color cyan600 = OneColors.cyan[600]!;
+  static Color cyan700 = OneColors.cyan[700]!;
+  static Color cyan800 = OneColors.cyan[800]!;
+  static Color cyan900 = OneColors.cyan[900]!;
+  static Color cyan950 = OneColors.cyan[950]!;
+
+  static Color moss50 = OneColors.moss[50]!;
+  static Color moss100 = OneColors.moss[100]!;
+  static Color moss200 = OneColors.moss[200]!;
+  static Color moss300 = OneColors.moss[300]!;
+  static Color moss400 = OneColors.moss[400]!;
+  static Color moss500 = OneColors.moss[500]!;
+  static Color moss600 = OneColors.moss[600]!;
+  static Color moss700 = OneColors.moss[700]!;
+  static Color moss800 = OneColors.moss[800]!;
+  static Color moss900 = OneColors.moss[900]!;
+  static Color moss950 = OneColors.moss[950]!;
+
+  static Color greenLight50 = OneColors.greenLight[50]!;
+  static Color greenLight100 = OneColors.greenLight[100]!;
+  static Color greenLight200 = OneColors.greenLight[200]!;
+  static Color greenLight300 = OneColors.greenLight[300]!;
+  static Color greenLight400 = OneColors.greenLight[400]!;
+  static Color greenLight500 = OneColors.greenLight[500]!;
+  static Color greenLight600 = OneColors.greenLight[600]!;
+  static Color greenLight700 = OneColors.greenLight[700]!;
+  static Color greenLight800 = OneColors.greenLight[800]!;
+  static Color greenLight900 = OneColors.greenLight[900]!;
+  static Color greenLight950 = OneColors.greenLight[950]!;
+
+  static Color green50 = OneColors.green[50]!;
+  static Color green100 = OneColors.green[100]!;
+  static Color green200 = OneColors.green[200]!;
+  static Color green300 = OneColors.green[300]!;
+  static Color green400 = OneColors.green[400]!;
+  static Color green500 = OneColors.green[500]!;
+  static Color green600 = OneColors.green[600]!;
+  static Color green700 = OneColors.green[700]!;
+  static Color green800 = OneColors.green[800]!;
+  static Color green900 = OneColors.green[900]!;
+  static Color green950 = OneColors.green[950]!;
 }

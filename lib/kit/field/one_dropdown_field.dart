@@ -19,7 +19,7 @@ class OneDropdownField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
-      value: value,
+      initialValue: value,
       isExpanded: isExpanded,
       items: items,
       onChanged: (newValue) {

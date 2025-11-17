@@ -163,19 +163,31 @@ OneFeaturedIcon(
 
 ### Цвета
 
-Библиотека предоставляет полную систему цветов с поддержкой светлой и темной темы:
+Библиотека предоставляет полную систему цветов на основе **Untitled UI Figma Kit** с поддержкой светлой и темной темы.
+
+**📖 [Полная документация по цветам](COLORS.md)**
 
 ```dart
-// Основные цвета
+// Семантические цвета (автоматическая поддержка темной темы)
 context.color.background(BackgroundColorType.primary)
 context.color.text(TextColorType.primary)
 context.color.border(BorderColorType.primary)
 
-// Семантические цвета
-context.color.semantic(SemanticColorType.success)
-context.color.semantic(SemanticColorType.error)
-context.color.semantic(SemanticColorType.warning)
-context.color.semantic(SemanticColorType.info)
+// Прямой доступ к цветам
+OneColors.brand[600]          // Brand цвет
+OneColors.error[600]          // Error цвет
+OneColors.success[600]        // Success цвет
+OneColors.warning[600]        // Warning цвет
+
+// Utility colors с автоинверсией для темной темы
+context.color.utility(UtilityColorType.gray100)
+context.color.utility(UtilityColorType.brand600)
+
+// Все основные цвета Untitled UI:
+// - Gray (light & dark mode)
+// - Brand (Primary)
+// - Error, Warning, Success
+// - 25+ вторичных цветов (Blue, Purple, Green, Orange, и т.д.)
 ```
 
 ### Типографика

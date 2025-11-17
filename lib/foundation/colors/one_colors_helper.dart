@@ -257,6 +257,70 @@ enum UtilityColorType {
   orange500,
   orange600,
   orange700,
+  yellow50,
+  yellow100,
+  yellow200,
+  yellow300,
+  yellow400,
+  yellow500,
+  yellow600,
+  yellow700,
+  rose50,
+  rose100,
+  rose200,
+  rose300,
+  rose400,
+  rose500,
+  rose600,
+  rose700,
+  violet50,
+  violet100,
+  violet200,
+  violet300,
+  violet400,
+  violet500,
+  violet600,
+  violet700,
+  teal50,
+  teal100,
+  teal200,
+  teal300,
+  teal400,
+  teal500,
+  teal600,
+  teal700,
+  cyan50,
+  cyan100,
+  cyan200,
+  cyan300,
+  cyan400,
+  cyan500,
+  cyan600,
+  cyan700,
+  moss50,
+  moss100,
+  moss200,
+  moss300,
+  moss400,
+  moss500,
+  moss600,
+  moss700,
+  greenLight50,
+  greenLight100,
+  greenLight200,
+  greenLight300,
+  greenLight400,
+  greenLight500,
+  greenLight600,
+  greenLight700,
+  green50,
+  green100,
+  green200,
+  green300,
+  green400,
+  green500,
+  green600,
+  green700,
 }
 
 enum ShadowColorType {
@@ -1214,6 +1278,246 @@ class OneColorsHelper {
         return isLight
             ? OneColorsVariables.orange700
             : OneColorsVariables.orange300;
+      case UtilityColorType.yellow50:
+        return isLight
+            ? OneColorsVariables.yellow50
+            : OneColorsVariables.yellow950;
+      case UtilityColorType.yellow100:
+        return isLight
+            ? OneColorsVariables.yellow100
+            : OneColorsVariables.yellow900;
+      case UtilityColorType.yellow200:
+        return isLight
+            ? OneColorsVariables.yellow200
+            : OneColorsVariables.yellow800;
+      case UtilityColorType.yellow300:
+        return isLight
+            ? OneColorsVariables.yellow300
+            : OneColorsVariables.yellow700;
+      case UtilityColorType.yellow400:
+        return isLight
+            ? OneColorsVariables.yellow400
+            : OneColorsVariables.yellow600;
+      case UtilityColorType.yellow500:
+        return OneColorsVariables.yellow500;
+      case UtilityColorType.yellow600:
+        return isLight
+            ? OneColorsVariables.yellow600
+            : OneColorsVariables.yellow400;
+      case UtilityColorType.yellow700:
+        return isLight
+            ? OneColorsVariables.yellow700
+            : OneColorsVariables.yellow300;
+      case UtilityColorType.rose50:
+        return isLight
+            ? OneColorsVariables.rose50
+            : OneColorsVariables.rose950;
+      case UtilityColorType.rose100:
+        return isLight
+            ? OneColorsVariables.rose100
+            : OneColorsVariables.rose900;
+      case UtilityColorType.rose200:
+        return isLight
+            ? OneColorsVariables.rose200
+            : OneColorsVariables.rose800;
+      case UtilityColorType.rose300:
+        return isLight
+            ? OneColorsVariables.rose300
+            : OneColorsVariables.rose700;
+      case UtilityColorType.rose400:
+        return isLight
+            ? OneColorsVariables.rose400
+            : OneColorsVariables.rose600;
+      case UtilityColorType.rose500:
+        return OneColorsVariables.rose500;
+      case UtilityColorType.rose600:
+        return isLight
+            ? OneColorsVariables.rose600
+            : OneColorsVariables.rose400;
+      case UtilityColorType.rose700:
+        return isLight
+            ? OneColorsVariables.rose700
+            : OneColorsVariables.rose300;
+      case UtilityColorType.violet50:
+        return isLight
+            ? OneColorsVariables.violet50
+            : OneColorsVariables.violet950;
+      case UtilityColorType.violet100:
+        return isLight
+            ? OneColorsVariables.violet100
+            : OneColorsVariables.violet900;
+      case UtilityColorType.violet200:
+        return isLight
+            ? OneColorsVariables.violet200
+            : OneColorsVariables.violet800;
+      case UtilityColorType.violet300:
+        return isLight
+            ? OneColorsVariables.violet300
+            : OneColorsVariables.violet700;
+      case UtilityColorType.violet400:
+        return isLight
+            ? OneColorsVariables.violet400
+            : OneColorsVariables.violet600;
+      case UtilityColorType.violet500:
+        return OneColorsVariables.violet500;
+      case UtilityColorType.violet600:
+        return isLight
+            ? OneColorsVariables.violet600
+            : OneColorsVariables.violet400;
+      case UtilityColorType.violet700:
+        return isLight
+            ? OneColorsVariables.violet700
+            : OneColorsVariables.violet300;
+      case UtilityColorType.teal50:
+        return isLight
+            ? OneColorsVariables.teal50
+            : OneColorsVariables.teal950;
+      case UtilityColorType.teal100:
+        return isLight
+            ? OneColorsVariables.teal100
+            : OneColorsVariables.teal900;
+      case UtilityColorType.teal200:
+        return isLight
+            ? OneColorsVariables.teal200
+            : OneColorsVariables.teal800;
+      case UtilityColorType.teal300:
+        return isLight
+            ? OneColorsVariables.teal300
+            : OneColorsVariables.teal700;
+      case UtilityColorType.teal400:
+        return isLight
+            ? OneColorsVariables.teal400
+            : OneColorsVariables.teal600;
+      case UtilityColorType.teal500:
+        return OneColorsVariables.teal500;
+      case UtilityColorType.teal600:
+        return isLight
+            ? OneColorsVariables.teal600
+            : OneColorsVariables.teal400;
+      case UtilityColorType.teal700:
+        return isLight
+            ? OneColorsVariables.teal700
+            : OneColorsVariables.teal300;
+      case UtilityColorType.cyan50:
+        return isLight
+            ? OneColorsVariables.cyan50
+            : OneColorsVariables.cyan950;
+      case UtilityColorType.cyan100:
+        return isLight
+            ? OneColorsVariables.cyan100
+            : OneColorsVariables.cyan900;
+      case UtilityColorType.cyan200:
+        return isLight
+            ? OneColorsVariables.cyan200
+            : OneColorsVariables.cyan800;
+      case UtilityColorType.cyan300:
+        return isLight
+            ? OneColorsVariables.cyan300
+            : OneColorsVariables.cyan700;
+      case UtilityColorType.cyan400:
+        return isLight
+            ? OneColorsVariables.cyan400
+            : OneColorsVariables.cyan600;
+      case UtilityColorType.cyan500:
+        return OneColorsVariables.cyan500;
+      case UtilityColorType.cyan600:
+        return isLight
+            ? OneColorsVariables.cyan600
+            : OneColorsVariables.cyan400;
+      case UtilityColorType.cyan700:
+        return isLight
+            ? OneColorsVariables.cyan700
+            : OneColorsVariables.cyan300;
+      case UtilityColorType.moss50:
+        return isLight
+            ? OneColorsVariables.moss50
+            : OneColorsVariables.moss950;
+      case UtilityColorType.moss100:
+        return isLight
+            ? OneColorsVariables.moss100
+            : OneColorsVariables.moss900;
+      case UtilityColorType.moss200:
+        return isLight
+            ? OneColorsVariables.moss200
+            : OneColorsVariables.moss800;
+      case UtilityColorType.moss300:
+        return isLight
+            ? OneColorsVariables.moss300
+            : OneColorsVariables.moss700;
+      case UtilityColorType.moss400:
+        return isLight
+            ? OneColorsVariables.moss400
+            : OneColorsVariables.moss600;
+      case UtilityColorType.moss500:
+        return OneColorsVariables.moss500;
+      case UtilityColorType.moss600:
+        return isLight
+            ? OneColorsVariables.moss600
+            : OneColorsVariables.moss400;
+      case UtilityColorType.moss700:
+        return isLight
+            ? OneColorsVariables.moss700
+            : OneColorsVariables.moss300;
+      case UtilityColorType.greenLight50:
+        return isLight
+            ? OneColorsVariables.greenLight50
+            : OneColorsVariables.greenLight950;
+      case UtilityColorType.greenLight100:
+        return isLight
+            ? OneColorsVariables.greenLight100
+            : OneColorsVariables.greenLight900;
+      case UtilityColorType.greenLight200:
+        return isLight
+            ? OneColorsVariables.greenLight200
+            : OneColorsVariables.greenLight800;
+      case UtilityColorType.greenLight300:
+        return isLight
+            ? OneColorsVariables.greenLight300
+            : OneColorsVariables.greenLight700;
+      case UtilityColorType.greenLight400:
+        return isLight
+            ? OneColorsVariables.greenLight400
+            : OneColorsVariables.greenLight600;
+      case UtilityColorType.greenLight500:
+        return OneColorsVariables.greenLight500;
+      case UtilityColorType.greenLight600:
+        return isLight
+            ? OneColorsVariables.greenLight600
+            : OneColorsVariables.greenLight400;
+      case UtilityColorType.greenLight700:
+        return isLight
+            ? OneColorsVariables.greenLight700
+            : OneColorsVariables.greenLight300;
+      case UtilityColorType.green50:
+        return isLight
+            ? OneColorsVariables.green50
+            : OneColorsVariables.green950;
+      case UtilityColorType.green100:
+        return isLight
+            ? OneColorsVariables.green100
+            : OneColorsVariables.green900;
+      case UtilityColorType.green200:
+        return isLight
+            ? OneColorsVariables.green200
+            : OneColorsVariables.green800;
+      case UtilityColorType.green300:
+        return isLight
+            ? OneColorsVariables.green300
+            : OneColorsVariables.green700;
+      case UtilityColorType.green400:
+        return isLight
+            ? OneColorsVariables.green400
+            : OneColorsVariables.green600;
+      case UtilityColorType.green500:
+        return OneColorsVariables.green500;
+      case UtilityColorType.green600:
+        return isLight
+            ? OneColorsVariables.green600
+            : OneColorsVariables.green400;
+      case UtilityColorType.green700:
+        return isLight
+            ? OneColorsVariables.green700
+            : OneColorsVariables.green300;
     }
   }
 

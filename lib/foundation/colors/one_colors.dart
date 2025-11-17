@@ -12,39 +12,39 @@ class OneColors {
 
   // Gray
   static const MaterialColor grayLightMode = MaterialColor(
-    0xFF667085, // 500 as primary
+    0xFF717680, // 500 as primary
     <int, Color>{
       25: Color(0xFFFCFCFD),
-      50: Color(0xFFF9FAFB),
-      100: Color(0xFFF2F4F7),
-      200: Color(0xFFE4E7EC),
-      300: Color(0xFFD0D5DD),
-      400: Color(0xFF98A2B3),
-      500: Color(0xFF667085),
-      600: Color(0xFF475467),
-      700: Color(0xFF344054),
-      800: Color(0xFF182230),
-      900: Color(0xFF101828),
-      950: Color(0xFF0C111D),
+      50: Color(0xFFFAFAFA),
+      100: Color(0xFFF5F5F5),
+      200: Color(0xFFE9EAEB),
+      300: Color(0xFFD5D7DA),
+      400: Color(0xFFA4A7AE),
+      500: Color(0xFF717680),
+      600: Color(0xFF535862),
+      700: Color(0xFF414651),
+      800: Color(0xFF252B37),
+      900: Color(0xFF181D27),
+      950: Color(0xFF0A0D12),
     },
   );
 
   // Gray (dark mode)
   static const MaterialColor grayDarkMode = MaterialColor(
-    0xFF94969C, // 500 as primary
+    0xFF85888E, // 500 as primary
     <int, Color>{
       25: Color(0xFFFAFAFA),
-      50: Color(0xFFF5F5F6),
-      100: Color(0xFFF0F1F1),
+      50: Color(0xFFF7F7F7),
+      100: Color(0xFFF0F0F1),
       200: Color(0xFFECECED),
       300: Color(0xFFCECFD2),
-      400: Color(0xFF94969C),
+      400: Color(0xFF94979C),
       500: Color(0xFF85888E),
-      600: Color(0xFF61646C),
-      700: Color(0xFF333741),
-      800: Color(0xFF1F242F),
-      900: Color(0xFF161B26),
-      950: Color(0xFF0C111D),
+      600: Color(0xFF61656C),
+      700: Color(0xFF373A41),
+      800: Color(0xFF22262F),
+      900: Color(0xFF13161B),
+      950: Color(0xFF0C0E12),
     },
   );
 
