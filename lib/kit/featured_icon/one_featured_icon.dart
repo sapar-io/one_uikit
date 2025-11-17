@@ -14,10 +14,7 @@ part 'data/one_featured_icon_view_model.dart';
 /// 4 sizes: sm (32px), md (40px), lg (48px), xl (56px)
 /// 5 colors: brand, gray, error, warning, success
 class OneFeaturedIcon extends StatelessWidget {
-  const OneFeaturedIcon({
-    super.key,
-    required this.viewModel,
-  });
+  const OneFeaturedIcon({super.key, required this.viewModel});
 
   final OneFeaturedIconViewModel viewModel;
 
@@ -70,28 +67,7 @@ class OneFeaturedIcon extends StatelessWidget {
           color: context.color.border(BorderColorType.primary),
           width: 1,
         ),
-        boxShadow: [
-          // Outer shadow
-          BoxShadow(
-            color: const Color(0x0A0D1212).withOpacity(0.05),
-            offset: const Offset(0, 1),
-            blurRadius: 2,
-          ),
-          // Inset shadow (bottom)
-          BoxShadow(
-            color: const Color(0x0A0D1212).withOpacity(0.05),
-            offset: const Offset(0, -2),
-            blurRadius: 0,
-            spreadRadius: 0,
-          ),
-          // Inset shadow (border effect)
-          BoxShadow(
-            color: const Color(0x0A0D1212).withOpacity(0.18),
-            offset: const Offset(0, 0),
-            blurRadius: 0,
-            spreadRadius: 1,
-          ),
-        ],
+        boxShadow: context.shadow.get(OneShadowSize.xs),
       ),
       child: Center(
         child: OneIcons.get(
@@ -112,30 +88,10 @@ class OneFeaturedIcon extends StatelessWidget {
         color: viewModel.color.darkBackground(context),
         borderRadius: BorderRadius.circular(viewModel.size.borderRadius),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
           width: 2,
         ),
-        boxShadow: [
-          // Outer shadow
-          BoxShadow(
-            color: const Color(0x0A0D1212).withOpacity(0.05),
-            offset: const Offset(0, 1),
-            blurRadius: 2,
-          ),
-          // Inset shadow (bottom)
-          BoxShadow(
-            color: const Color(0x0A0D1212).withOpacity(0.05),
-            offset: const Offset(0, -2),
-            blurRadius: 0,
-          ),
-          // Inset shadow (border effect)
-          BoxShadow(
-            color: const Color(0x0A0D1212).withOpacity(0.18),
-            offset: const Offset(0, 0),
-            blurRadius: 0,
-            spreadRadius: 1,
-          ),
-        ],
+        boxShadow: context.shadow.get(OneShadowSize.xs),
       ),
       child: Center(
         child: OneIcons.get(
@@ -165,7 +121,7 @@ class OneFeaturedIcon extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: iconColor.withOpacity(0.1),
+                color: iconColor.withValues(alpha: 0.1),
                 width: 2,
               ),
             ),
@@ -177,7 +133,7 @@ class OneFeaturedIcon extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: iconColor.withOpacity(0.3),
+                color: iconColor.withValues(alpha: 0.3),
                 width: 2,
               ),
             ),
@@ -206,23 +162,7 @@ class OneFeaturedIcon extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          // Outer circle with gradient
-          Container(
-            width: size,
-            height: size,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.black,
-                  Colors.black.withOpacity(0),
-                ],
-              ),
-            ),
-          ),
-          // Outer circle background
+          // Colored circle background with border
           Container(
             width: size,
             height: size,
@@ -232,6 +172,22 @@ class OneFeaturedIcon extends StatelessWidget {
               border: Border.all(
                 color: viewModel.color.gradientBorder(),
                 width: 1,
+              ),
+            ),
+          ),
+          // Black gradient overlay
+          Container(
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black.withValues(alpha: 0.15),
+                  Colors.transparent,
+                ],
               ),
             ),
           ),
@@ -267,14 +223,18 @@ class OneFeaturedIcon extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           // Background rotated square (for depth effect)
-          Transform.rotate(
-            angle: 0.2617993878, // 15 degrees in radians
-            child: Container(
-              width: size,
-              height: size,
-              decoration: BoxDecoration(
-                color: viewModel.color.darkBackground(context),
-                borderRadius: BorderRadius.circular(viewModel.size.borderRadius),
+          Align(
+            child: Transform.rotate(
+              angle: 0.2617993878, // 15 degrees in radians
+              child: Container(
+                width: size,
+                height: size,
+                decoration: BoxDecoration(
+                  color: viewModel.color.darkBackground(context),
+                  borderRadius: BorderRadius.circular(
+                    viewModel.size.borderRadius,
+                  ),
+                ),
               ),
             ),
           ),
@@ -287,11 +247,12 @@ class OneFeaturedIcon extends StatelessWidget {
                 width: size,
                 height: size,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.6),
-                  borderRadius:
-                      BorderRadius.circular(viewModel.size.borderRadius),
+                  color: Colors.white.withValues(alpha: 0.6),
+                  borderRadius: BorderRadius.circular(
+                    viewModel.size.borderRadius,
+                  ),
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.6),
+                    color: Colors.white.withValues(alpha: 0.6),
                     width: 1,
                   ),
                 ),

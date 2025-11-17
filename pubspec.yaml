@@ -29,4 +29,24 @@ dev_dependencies:
 flutter:
   assets:
     - assets/icons/
+    - assets/icons/alerts/
+    - assets/icons/arrows/
+    - assets/icons/charts/
+    - assets/icons/communication/
+    - assets/icons/development/
+    - assets/icons/editor/
+    - assets/icons/education/
+    - assets/icons/files/
+    - assets/icons/finance/
+    - assets/icons/general/
+    - assets/icons/images/
+    - assets/icons/layout/
+    - assets/icons/maps/
+    - assets/icons/media/
+    - assets/icons/security/
+    - assets/icons/shapes/
+    - assets/icons/time/
+    - assets/icons/users/
+    - assets/icons/weather/
+    - assets/icons/social/
     - assets/images/

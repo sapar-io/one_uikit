@@ -19,6 +19,8 @@ export 'kit/card/one_card.dart';
 export 'kit/card/one_card_content.dart';
 export 'kit/empty/one_empty.dart';
 export 'kit/featured_icon/one_featured_icon.dart';
+export 'kit/nav_icon/one_nav_icon.dart';
+export 'kit/nav_icon/one_nav_icon_with_text.dart';
 
 // * Kit Fields
 export 'kit/field/one_multi_dropdown_field.dart';

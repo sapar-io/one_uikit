@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widget_previews.dart';
 import 'package:one_uikit/one_uikit.dart';
 
 /// Widget previews for OneFeaturedIcon component
@@ -10,183 +11,34 @@ import 'package:one_uikit/one_uikit.dart';
 // LIGHT TYPE PREVIEWS
 // ============================================================================
 
-@WidgetbookUseCase(name: 'Light - Brand', type: OneFeaturedIcon)
-Widget previewLightBrand(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.star,
-        type: OneFeaturedIconType.light,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.brand,
-      ),
-    ),
-  );
-}
+double _spacing = 12.0;
 
-@WidgetbookUseCase(name: 'Light - Gray', type: OneFeaturedIcon)
-Widget previewLightGray(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.settings,
-        type: OneFeaturedIconType.light,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.gray,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Light - Error', type: OneFeaturedIcon)
-Widget previewLightError(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.alertTriangle,
-        type: OneFeaturedIconType.light,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.error,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Light - Warning', type: OneFeaturedIcon)
-Widget previewLightWarning(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.alertCircle,
-        type: OneFeaturedIconType.light,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.warning,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Light - Success', type: OneFeaturedIcon)
-Widget previewLightSuccess(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.check,
-        type: OneFeaturedIconType.light,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.success,
-      ),
-    ),
-  );
-}
-
-// ============================================================================
-// MODERN TYPE PREVIEWS
-// ============================================================================
-
-@WidgetbookUseCase(name: 'Modern - Brand', type: OneFeaturedIcon)
-Widget previewModernBrand(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.star,
-        type: OneFeaturedIconType.modern,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.brand,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Modern - Gray', type: OneFeaturedIcon)
-Widget previewModernGray(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.settings,
-        type: OneFeaturedIconType.modern,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.gray,
-      ),
-    ),
-  );
-}
-
-// ============================================================================
-// DARK TYPE PREVIEWS
-// ============================================================================
-
-@WidgetbookUseCase(name: 'Dark - Brand', type: OneFeaturedIcon)
-Widget previewDarkBrand(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.star,
-        type: OneFeaturedIconType.dark,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.brand,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Dark - Error', type: OneFeaturedIcon)
-Widget previewDarkError(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.alertTriangle,
-        type: OneFeaturedIconType.dark,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.error,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Dark - Success', type: OneFeaturedIcon)
-Widget previewDarkSuccess(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.check,
-        type: OneFeaturedIconType.dark,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.success,
-      ),
-    ),
-  );
-}
-
-// ============================================================================
-// OUTLINE TYPE PREVIEWS
-// ============================================================================
-
-@WidgetbookUseCase(name: 'Outline - Brand', type: OneFeaturedIcon)
-Widget previewOutlineBrand(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.star,
-        type: OneFeaturedIconType.outline,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.brand,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Outline - Error', type: OneFeaturedIcon)
-Widget previewOutlineError(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.alertTriangle,
-        type: OneFeaturedIconType.outline,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.error,
-      ),
-    ),
+@Preview(name: "Light")
+Widget previewLight() {
+  return Column(
+    spacing: _spacing,
+    children:
+        OneFeaturedIconColor.values
+            .map(
+              (color) => Row(
+                spacing: _spacing,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:
+                    OneFeaturedIconSize.values
+                        .map(
+                          (size) => OneFeaturedIcon(
+                            viewModel: OneFeaturedIconViewModel(
+                              icon: AlertsFeedbackIcon.alertCircle,
+                              type: OneFeaturedIconType.light,
+                              size: size,
+                              color: color,
+                            ),
+                          ),
+                        )
+                        .toList(),
+              ),
+            )
+            .toList(),
   );
 }
 
@@ -194,31 +46,131 @@ Widget previewOutlineError(BuildContext context) {
 // GRADIENT TYPE PREVIEWS
 // ============================================================================
 
-@WidgetbookUseCase(name: 'Gradient - Brand', type: OneFeaturedIcon)
-Widget previewGradientBrand(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.star,
-        type: OneFeaturedIconType.gradient,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.brand,
-      ),
-    ),
+@Preview(name: "Gradient")
+Widget previewGradient() {
+  return Column(
+    spacing: _spacing,
+    children:
+        OneFeaturedIconColor.values
+            .map(
+              (color) => Row(
+                spacing: _spacing,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:
+                    OneFeaturedIconSize.values
+                        .map(
+                          (size) => OneFeaturedIcon(
+                            viewModel: OneFeaturedIconViewModel(
+                              icon: AlertsFeedbackIcon.alertCircle,
+                              type: OneFeaturedIconType.gradient,
+                              size: size,
+                              color: color,
+                            ),
+                          ),
+                        )
+                        .toList(),
+              ),
+            )
+            .toList(),
   );
 }
 
-@WidgetbookUseCase(name: 'Gradient - Success', type: OneFeaturedIcon)
-Widget previewGradientSuccess(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.check,
-        type: OneFeaturedIconType.gradient,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.success,
-      ),
-    ),
+// ============================================================================
+// DARK TYPE PREVIEWS
+// ============================================================================
+
+@Preview(name: "Dark")
+Widget previewDark() {
+  return Column(
+    spacing: _spacing,
+    children:
+        OneFeaturedIconColor.values
+            .map(
+              (color) => Row(
+                spacing: _spacing,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:
+                    OneFeaturedIconSize.values
+                        .map(
+                          (size) => OneFeaturedIcon(
+                            viewModel: OneFeaturedIconViewModel(
+                              icon: AlertsFeedbackIcon.alertCircle,
+                              type: OneFeaturedIconType.dark,
+                              size: size,
+                              color: color,
+                            ),
+                          ),
+                        )
+                        .toList(),
+              ),
+            )
+            .toList(),
+  );
+}
+
+// ============================================================================
+// MODERN TYPE PREVIEWS
+// ============================================================================
+
+@Preview(name: "Modern")
+Widget previewModern() {
+  return Column(
+    spacing: _spacing,
+    children:
+        OneFeaturedIconColor.values
+            .map(
+              (color) => Row(
+                spacing: _spacing,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:
+                    OneFeaturedIconSize.values
+                        .map(
+                          (size) => OneFeaturedIcon(
+                            viewModel: OneFeaturedIconViewModel(
+                              icon: AlertsFeedbackIcon.alertCircle,
+                              type: OneFeaturedIconType.modern,
+                              size: size,
+                              color: color,
+                            ),
+                          ),
+                        )
+                        .toList(),
+              ),
+            )
+            .toList(),
+  );
+}
+
+// ============================================================================
+// OUTLINE TYPE PREVIEWS
+// ============================================================================
+
+@Preview(name: "Outline")
+Widget previewOutline() {
+  return Column(
+    spacing: _spacing,
+    children:
+        OneFeaturedIconColor.values
+            .map(
+              (color) => Row(
+                spacing: _spacing,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:
+                    OneFeaturedIconSize.values
+                        .map(
+                          (size) => OneFeaturedIcon(
+                            viewModel: OneFeaturedIconViewModel(
+                              icon: AlertsFeedbackIcon.alertCircle,
+                              type: OneFeaturedIconType.outline,
+                              size: size,
+                              color: color,
+                            ),
+                          ),
+                        )
+                        .toList(),
+              ),
+            )
+            .toList(),
   );
 }
 
@@ -226,31 +178,32 @@ Widget previewGradientSuccess(BuildContext context) {
 // GLASS TYPE PREVIEWS
 // ============================================================================
 
-@WidgetbookUseCase(name: 'Glass - Brand', type: OneFeaturedIcon)
-Widget previewGlassBrand(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.star,
-        type: OneFeaturedIconType.glass,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.brand,
-      ),
-    ),
-  );
-}
-
-@WidgetbookUseCase(name: 'Glass - Gray', type: OneFeaturedIcon)
-Widget previewGlassGray(BuildContext context) {
-  return const Center(
-    child: OneFeaturedIcon(
-      viewModel: OneFeaturedIconViewModel(
-        icon: OneIconsEnum.settings,
-        type: OneFeaturedIconType.glass,
-        size: OneFeaturedIconSize.lg,
-        color: OneFeaturedIconColor.gray,
-      ),
-    ),
+@Preview(name: "Glass")
+Widget previewGlass() {
+  return Column(
+    spacing: _spacing,
+    children:
+        OneFeaturedIconColor.values
+            .map(
+              (color) => Row(
+                spacing: _spacing,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:
+                    OneFeaturedIconSize.values
+                        .map(
+                          (size) => OneFeaturedIcon(
+                            viewModel: OneFeaturedIconViewModel(
+                              icon: AlertsFeedbackIcon.alertCircle,
+                              type: OneFeaturedIconType.glass,
+                              size: size,
+                              color: color,
+                            ),
+                          ),
+                        )
+                        .toList(),
+              ),
+            )
+            .toList(),
   );
 }
 
@@ -258,17 +211,17 @@ Widget previewGlassGray(BuildContext context) {
 // SIZE COMPARISON PREVIEWS
 // ============================================================================
 
-@WidgetbookUseCase(name: 'All Sizes - Light Brand', type: OneFeaturedIcon)
-Widget previewAllSizes(BuildContext context) {
+@Preview(name: "All Sizes")
+Widget previewAllSizes() {
   return Center(
     child: Wrap(
       spacing: 16,
       runSpacing: 16,
       alignment: WrapAlignment.center,
-      children: const [
+      children: [
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.sm,
             color: OneFeaturedIconColor.brand,
@@ -276,7 +229,7 @@ Widget previewAllSizes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.md,
             color: OneFeaturedIconColor.brand,
@@ -284,7 +237,7 @@ Widget previewAllSizes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -292,7 +245,7 @@ Widget previewAllSizes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.xl,
             color: OneFeaturedIconColor.brand,
@@ -307,17 +260,17 @@ Widget previewAllSizes(BuildContext context) {
 // TYPE COMPARISON PREVIEWS
 // ============================================================================
 
-@WidgetbookUseCase(name: 'All Types - Brand', type: OneFeaturedIcon)
-Widget previewAllTypes(BuildContext context) {
+@Preview(name: "All Types")
+Widget previewAllTypes() {
   return Center(
     child: Wrap(
       spacing: 24,
       runSpacing: 24,
       alignment: WrapAlignment.center,
-      children: const [
+      children: [
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -325,7 +278,7 @@ Widget previewAllTypes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.modern,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -333,7 +286,7 @@ Widget previewAllTypes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.dark,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -341,7 +294,7 @@ Widget previewAllTypes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.outline,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -349,7 +302,7 @@ Widget previewAllTypes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.gradient,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -357,7 +310,7 @@ Widget previewAllTypes(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.glass,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -372,17 +325,17 @@ Widget previewAllTypes(BuildContext context) {
 // COLOR COMPARISON PREVIEWS
 // ============================================================================
 
-@WidgetbookUseCase(name: 'All Colors - Light Type', type: OneFeaturedIcon)
-Widget previewAllColors(BuildContext context) {
+@Preview(name: "All Colors")
+Widget previewAllColors() {
   return Center(
     child: Wrap(
       spacing: 16,
       runSpacing: 16,
       alignment: WrapAlignment.center,
-      children: const [
+      children: [
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.star,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.brand,
@@ -390,7 +343,7 @@ Widget previewAllColors(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.settings,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.gray,
@@ -398,7 +351,7 @@ Widget previewAllColors(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.alertTriangle,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.error,
@@ -406,7 +359,7 @@ Widget previewAllColors(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.alertCircle,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.warning,
@@ -414,7 +367,7 @@ Widget previewAllColors(BuildContext context) {
         ),
         OneFeaturedIcon(
           viewModel: OneFeaturedIconViewModel(
-            icon: OneIconsEnum.check,
+            icon: AlertsFeedbackIcon.alertCircle,
             type: OneFeaturedIconType.light,
             size: OneFeaturedIconSize.lg,
             color: OneFeaturedIconColor.success,
