@@ -1,5 +1,11 @@
 part of '../one_featured_icon.dart';
 
+/// Featured icon sizes based on Untitled UI Figma Kit
+///
+/// sm: 32×32px
+/// md: 40×40px
+/// lg: 48×48px
+/// xl: 56×56px
 enum OneFeaturedIconSize {
   sm,
   md,
@@ -8,6 +14,7 @@ enum OneFeaturedIconSize {
 }
 
 extension OneFeaturedIconSizeExtension on OneFeaturedIconSize {
+  /// Container size
   double get size {
     switch (this) {
       case OneFeaturedIconSize.sm:
@@ -21,6 +28,9 @@ extension OneFeaturedIconSizeExtension on OneFeaturedIconSize {
     }
   }
 
+  /// Icon size based on type
+  /// Most types use: sm=16, md=20, lg=24, xl=28
+  /// Gradient uses: sm/md=14, lg/xl=20
   double iconSize(OneFeaturedIconType type) {
     switch (type) {
       case OneFeaturedIconType.light:
@@ -42,7 +52,7 @@ extension OneFeaturedIconSizeExtension on OneFeaturedIconSize {
         switch (this) {
           case OneFeaturedIconSize.sm:
           case OneFeaturedIconSize.md:
-            return 16;
+            return 14;
           case OneFeaturedIconSize.lg:
           case OneFeaturedIconSize.xl:
             return 20;
@@ -50,16 +60,33 @@ extension OneFeaturedIconSizeExtension on OneFeaturedIconSize {
     }
   }
 
-  double borderRadius(OneFeaturedIconType type) {
+  /// Border radius for square types (modern, dark, glass)
+  /// sm: 6px, md: 8px, lg: 10px, xl: 12px
+  double get borderRadius {
     switch (this) {
       case OneFeaturedIconSize.sm:
-        return OneRadius.sm;
+        return 6;
       case OneFeaturedIconSize.md:
-        return OneRadius.md;
+        return 8;
       case OneFeaturedIconSize.lg:
-        return OneRadius.lg;
+        return 10;
       case OneFeaturedIconSize.xl:
-        return OneRadius.xl;
+        return 12;
+    }
+  }
+
+  /// Inner circle size for gradient type
+  /// sm: 24px, md: 32px, lg: 36px, xl: 36px
+  double get gradientInnerCircleSize {
+    switch (this) {
+      case OneFeaturedIconSize.sm:
+        return 24;
+      case OneFeaturedIconSize.md:
+        return 32;
+      case OneFeaturedIconSize.lg:
+        return 36;
+      case OneFeaturedIconSize.xl:
+        return 36;
     }
   }
 }

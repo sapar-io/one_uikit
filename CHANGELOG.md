@@ -1,3 +1,19 @@
+## 0.3.0
+
+* ✨ **BREAKING**: Complete rewrite of FeaturedIcon component to match Untitled UI Figma Kit
+* Implemented all 6 icon types: Light, Modern, Dark, Outline, Gradient, Glass
+* Light: Circular background with colored icon
+* Modern: Square with shadows, borders, and gray icon
+* Dark: Square solid background with white icon
+* Outline: Icon with concentric circles (30% and 10% opacity)
+* Gradient: Double circle with gradient background and solid inner circle
+* Glass: Frosted glass effect with backdrop blur
+* Updated sizes with correct icon sizes for each type
+* Updated color system with separate methods for each type
+* Added gradient-specific colors (50 and 200 shades)
+* Fixed border radius values to match Figma (sm: 6px, md: 8px, lg: 10px, xl: 12px)
+* All types now render correctly according to Figma specifications
+
 ## 0.2.2
 
 * 🔧 **BREAKING**: Aligned typography system with Untitled UI Figma Kit specifications
