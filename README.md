@@ -167,6 +167,12 @@ OneFeaturedIcon(
 
 **📖 [Полная документация по цветам](COLORS.md)**
 
+### Градиенты
+
+112 готовых градиентов для создания красивых фонов и эффектов глубины.
+
+**📖 [Полная документация по градиентам](GRADIENTS.md)**
+
 ```dart
 // Семантические цвета (автоматическая поддержка темной темы)
 context.color.background(BackgroundColorType.primary)
@@ -188,6 +194,24 @@ context.color.utility(UtilityColorType.brand600)
 // - Brand (Primary)
 // - Error, Warning, Success
 // - 25+ вторичных цветов (Blue, Purple, Green, Orange, и т.д.)
+
+// Градиенты
+Container(
+  decoration: BoxDecoration(
+    gradient: OneGradients.brand01,  // 7 brand градиентов
+    // или
+    gradient: OneGradients.gray08,   // 14 gray градиентов
+    // или
+    gradient: OneGradients.linear59, // 91 linear градиент
+  ),
+)
+
+// Через extension
+Container(
+  decoration: BoxDecoration(
+    gradient: context.gradient(OneGradientType.linear01),
+  ),
+)
 ```
 
 ### Типографика

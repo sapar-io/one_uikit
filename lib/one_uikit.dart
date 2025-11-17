@@ -3,6 +3,7 @@ library;
 // * Foundation
 export 'foundation/icons/one_icons.dart';
 export 'foundation/colors/one_colors.dart';
+export 'foundation/gradients/one_gradients.dart';
 export 'foundation/effect_style/one_shadow.dart';
 export 'foundation/space_radius_grids/one_space.dart';
 export 'foundation/typography/one_typography.dart';

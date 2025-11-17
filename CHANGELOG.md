@@ -1,3 +1,28 @@
+## 0.2.1
+
+* 📝 **IMPROVED**: Enhanced color variables with comprehensive Figma documentation comments
+* Added detailed usage descriptions for all Text color variables (20+ variables)
+* Added detailed usage descriptions for all Border color variables (including success/warning variants)
+* Added detailed usage descriptions for all Foreground color variables (30+ variables)
+* Added detailed usage descriptions for all Background color variables (40+ variables)
+* Organized Utility colors with clear section headers (Gray, Error, Warning, Success, Secondary colors)
+* All color variables now include Light/Dark mode values in comments
+* Removed duplicate border variable definitions
+* Improved code documentation for better developer experience
+
+## 0.2.0
+
+* ✨ **NEW**: Added complete gradient system with 112 gradients from Untitled UI Figma Kit
+* Added 14 Gray gradients for neutral backgrounds
+* Added 7 Brand gradients for primary color themes
+* Added 91 Linear gradients for colorful backgrounds and accents
+* Added OneGradientType enum for type-safe gradient usage
+* Added GradientExtension for convenient context-based access
+* Fixed gradients to use OneColors references instead of hardcoded HEX values
+* Changed Gray and Brand gradients from static const to static final for runtime color access
+* Created comprehensive GRADIENTS.md documentation with examples
+* Updated README with gradient usage examples
+
 ## 0.1.6
 
 * 🎨 **BREAKING**: Updated color system to match Untitled UI Figma Kit specifications
