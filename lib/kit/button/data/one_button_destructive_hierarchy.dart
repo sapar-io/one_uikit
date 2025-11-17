@@ -20,23 +20,31 @@ extension OneButtonDestructiveHierarchyExtension
         if (isDisabled) {
           return context.color.background(BackgroundColorType.disabled);
         } else if (isPressed) {
-          return context.color.utility(UtilityColorType.brand700);
+          return context.color.utility(UtilityColorType.error700);
         } else if (isFocused) {
-          return context.color.utility(UtilityColorType.brand300);
+          return context.color.utility(UtilityColorType.error600);
         }
-        return Theme.of(context).colorScheme.primary;
+        return context.color.utility(UtilityColorType.error600);
       case OneButtonDestructiveHierarchy.secondary:
         if (isDisabled) {
           return context.color.background(BackgroundColorType.primary);
         } else if (isPressed) {
-          return context.color.background(BackgroundColorType.primary);
+          return context.color.utility(UtilityColorType.error50);
         } else if (isFocused) {
-          return context.color.utility(UtilityColorType.gray50);
+          return context.color.utility(UtilityColorType.error50);
         }
-        return context.color.background(BackgroundColorType.primary);
+        return context.color.utility(UtilityColorType.error50);
       case OneButtonDestructiveHierarchy.tertiary:
+        if (isDisabled) {
+          return Colors.transparent;
+        } else if (isPressed) {
+          return context.color.utility(UtilityColorType.error50);
+        } else if (isFocused) {
+          return context.color.utility(UtilityColorType.error50);
+        }
+        return Colors.transparent;
       case OneButtonDestructiveHierarchy.link:
-        return context.color.background(BackgroundColorType.secondary);
+        return Colors.transparent;
     }
   }
 
@@ -48,13 +56,33 @@ extension OneButtonDestructiveHierarchyExtension
   }) {
     switch (this) {
       case OneButtonDestructiveHierarchy.primary:
+        if (isDisabled) {
+          return context.color.foreground(ForegroundColorType.disabled);
+        }
         return OneColors.white;
       case OneButtonDestructiveHierarchy.secondary:
-        return context.color.foreground(ForegroundColorType.brandPrimary);
+        if (isDisabled) {
+          return context.color.foreground(ForegroundColorType.disabled);
+        } else if (isPressed) {
+          return context.color.utility(UtilityColorType.error700);
+        } else if (isFocused) {
+          return context.color.utility(UtilityColorType.error700);
+        }
+        return context.color.utility(UtilityColorType.error600);
       case OneButtonDestructiveHierarchy.tertiary:
-        return context.color.foreground(ForegroundColorType.tertiary);
+        if (isDisabled) {
+          return context.color.foreground(ForegroundColorType.disabled);
+        } else if (isPressed) {
+          return context.color.utility(UtilityColorType.error700);
+        } else if (isFocused) {
+          return context.color.utility(UtilityColorType.error700);
+        }
+        return context.color.utility(UtilityColorType.error600);
       case OneButtonDestructiveHierarchy.link:
-        return context.color.foreground(ForegroundColorType.tertiaryHover);
+        if (isDisabled) {
+          return context.color.foreground(ForegroundColorType.disabled);
+        }
+        return context.color.utility(UtilityColorType.error600);
     }
   }
 
@@ -85,10 +113,10 @@ extension OneButtonDestructiveHierarchyExtension
       case OneButtonDestructiveHierarchy.primary:
         return Colors.transparent;
       case OneButtonDestructiveHierarchy.secondary:
-        return context.color.utility(UtilityColorType.gray300);
+        return context.color.utility(UtilityColorType.error200);
       case OneButtonDestructiveHierarchy.tertiary:
       case OneButtonDestructiveHierarchy.link:
-        return Colors.red;
+        return Colors.transparent;
     }
   }
 }

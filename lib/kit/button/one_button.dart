@@ -58,15 +58,15 @@ class _OneButtonState extends State<OneButton> {
         boxShadow: widget.viewModel.hierarchy.boxShadow(context),
       ),
       child: MouseRegion(
-        cursor: SystemMouseCursors.click,
+        cursor: widget.viewModel.isDisabled ? SystemMouseCursors.basic : SystemMouseCursors.click,
         child: GestureDetector(
           onTap: widget.viewModel.isDisabled ? null : widget.viewModel.onTap,
-          onTapDown: _onTapDown,
-          onTapUp: _onTapUp,
-          onTapCancel: _onTapCancel,
+          onTapDown: widget.viewModel.isDisabled ? null : _onTapDown,
+          onTapUp: widget.viewModel.isDisabled ? null : _onTapUp,
+          onTapCancel: widget.viewModel.isDisabled ? null : _onTapCancel,
           child: FocusableActionDetector(
-            onShowFocusHighlight: _onFocus,
-            onShowHoverHighlight: _onFocus,
+            onShowFocusHighlight: widget.viewModel.isDisabled ? null : _onFocus,
+            onShowHoverHighlight: widget.viewModel.isDisabled ? null : _onFocus,
             child: Container(
               padding: widget.viewModel.size.padding,
               decoration: BoxDecoration(
@@ -82,8 +82,7 @@ class _OneButtonState extends State<OneButton> {
                         width: 1.0,
                       )
                     : null,
-                borderRadius:
-                    BorderRadius.circular(widget.viewModel.size.borderRadius),
+                borderRadius: BorderRadius.circular(widget.viewModel.size.borderRadius),
               ),
               child: widget.viewModel.isLoading ? _loader() : _content(context),
             ),

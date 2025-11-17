@@ -53,22 +53,21 @@ class _OneDestructiveButtonState extends State<OneDestructiveButton> {
   // * Build
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: widget.fullWidth ? double.infinity : null,
+    final button = Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(widget.size.borderRadius),
         boxShadow: widget.hierarchy.boxShadow(context),
       ),
       child: MouseRegion(
-        cursor: SystemMouseCursors.click,
+        cursor: widget.isDisabled ? SystemMouseCursors.basic : SystemMouseCursors.click,
         child: GestureDetector(
           onTap: widget.isDisabled ? null : widget.onTap,
-          onTapDown: _onTapDown,
-          onTapUp: _onTapUp,
-          onTapCancel: _onTapCancel,
+          onTapDown: widget.isDisabled ? null : _onTapDown,
+          onTapUp: widget.isDisabled ? null : _onTapUp,
+          onTapCancel: widget.isDisabled ? null : _onTapCancel,
           child: FocusableActionDetector(
-            onShowFocusHighlight: _onFocus,
-            onShowHoverHighlight: _onFocus,
+            onShowFocusHighlight: widget.isDisabled ? null : _onFocus,
+            onShowHoverHighlight: widget.isDisabled ? null : _onFocus,
             child: Container(
               padding: widget.size.padding,
               decoration: BoxDecoration(
@@ -92,11 +91,27 @@ class _OneDestructiveButtonState extends State<OneDestructiveButton> {
         ),
       ),
     );
+
+    if (widget.fullWidth) {
+      return SizedBox(
+        width: double.infinity,
+        child: button,
+      );
+    }
+    return button;
   }
 
   // * Widgets
   Row _content(BuildContext context) {
+    final foregroundColor = widget.hierarchy.foreground(
+      context: context,
+      isFocused: _isFocused,
+      isPressed: _isPressed,
+      isDisabled: widget.isDisabled,
+    );
+
     return Row(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         if (widget.leadingIcon != null)
@@ -105,37 +120,29 @@ class _OneDestructiveButtonState extends State<OneDestructiveButton> {
             child: OneIcons.get(
               widget.leadingIcon,
               size: widget.size.iconSize,
-              color: widget.hierarchy.foreground(
-                context: context,
-                isFocused: _isFocused,
-                isPressed: _isPressed,
-                isDisabled: widget.isDisabled,
+              color: foregroundColor,
+            ),
+          ),
+        if (widget.text != null && widget.text!.isNotEmpty)
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: OneSpace.s2),
+              child: Text(
+                widget.text!,
+                textAlign: TextAlign.center,
+                style: widget.size.textStyle(context).copyWith(
+                      color: foregroundColor,
+                    ),
               ),
             ),
           ),
-        Text(
-          widget.text ?? '',
-          style: widget.size.textStyle(context).copyWith(
-                color: widget.hierarchy.foreground(
-                  context: context,
-                  isFocused: _isFocused,
-                  isPressed: _isPressed,
-                  isDisabled: widget.isDisabled,
-                ),
-              ),
-        ),
         if (widget.trailingIcon != null)
           Padding(
             padding: EdgeInsets.only(left: widget.size.spaceBetween),
             child: OneIcons.get(
               widget.trailingIcon,
               size: widget.size.iconSize,
-              color: widget.hierarchy.foreground(
-                context: context,
-                isFocused: _isFocused,
-                isPressed: _isPressed,
-                isDisabled: widget.isDisabled,
-              ),
+              color: foregroundColor,
             ),
           ),
       ],
