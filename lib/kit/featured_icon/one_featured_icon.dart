@@ -167,10 +167,10 @@ class OneFeaturedIcon extends StatelessWidget {
             width: size,
             height: size,
             decoration: BoxDecoration(
-              color: viewModel.color.gradientOuterBackground(),
+              color: viewModel.color.gradientOuterBackground(context),
               shape: BoxShape.circle,
               border: Border.all(
-                color: viewModel.color.gradientBorder(),
+                color: viewModel.color.gradientBorder(context),
                 width: 1,
               ),
             ),

@@ -17,13 +17,24 @@ class OneBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isOutline = viewModel.type == BadgeType.pillOutline;
+    final borderColor = isOutline
+        ? viewModel.color.outlineBorderColor(context)
+        : viewModel.color.borderColor(context);
+    final backgroundColor = viewModel.type.hasBackground
+        ? viewModel.color.fillColor(context)
+        : Colors.transparent;
+
     return GestureDetector(
       onTap: viewModel.onTap,
       child: Container(
         padding: viewModel.size.padding(context),
         decoration: BoxDecoration(
-          color: viewModel.color.fillColor(context),
-          border: Border.all(color: viewModel.color.borderColor(context)),
+          color: backgroundColor,
+          border: Border.all(
+            color: borderColor,
+            width: viewModel.type.borderWidth,
+          ),
           borderRadius: BorderRadius.circular(viewModel.type.radius),
         ),
         child: Row(
@@ -37,12 +48,15 @@ class OneBadge extends StatelessWidget {
                   viewModel.iconData,
                   context: context,
                   size: viewModel.size.iconSize,
+                  color: viewModel.color.textColor(context),
                 ),
               ),
             if (viewModel.text != null)
               Text(
                 viewModel.text!,
-                style: viewModel.size.textStyle(context),
+                style: viewModel.size
+                    .textStyle(context)
+                    .copyWith(color: viewModel.color.textColor(context)),
               ),
             if (viewModel.icon == BadgeIcon.iconTrailing &&
                 viewModel.iconData != null)
@@ -52,6 +66,7 @@ class OneBadge extends StatelessWidget {
                   viewModel.iconData,
                   context: context,
                   size: viewModel.size.iconSize,
+                  color: viewModel.color.textColor(context),
                 ),
               ),
           ],
@@ -158,6 +173,68 @@ extension BadgeColorX on BadgeColor {
         return context.color.utility(UtilityColorType.grayBlue200);
     }
   }
+
+  Color textColor(BuildContext context) {
+    switch (this) {
+      case BadgeColor.gray:
+        return context.color.utility(UtilityColorType.gray700);
+      case BadgeColor.brand:
+        return context.color.utility(UtilityColorType.brand700);
+      case BadgeColor.error:
+        return context.color.utility(UtilityColorType.error700);
+      case BadgeColor.warning:
+        return context.color.utility(UtilityColorType.warning700);
+      case BadgeColor.success:
+        return context.color.utility(UtilityColorType.success700);
+      case BadgeColor.blueLight:
+        return context.color.utility(UtilityColorType.blueLight700);
+      case BadgeColor.blue:
+        return context.color.utility(UtilityColorType.blue700);
+      case BadgeColor.indigo:
+        return context.color.utility(UtilityColorType.indigo700);
+      case BadgeColor.purple:
+        return context.color.utility(UtilityColorType.purple700);
+      case BadgeColor.pink:
+        return context.color.utility(UtilityColorType.pink700);
+      case BadgeColor.orange:
+        return context.color.utility(UtilityColorType.orange700);
+      case BadgeColor.blueGray:
+        return context.color.utility(UtilityColorType.grayBlue700);
+      case BadgeColor.grayBlue:
+        return context.color.utility(UtilityColorType.grayBlue700);
+    }
+  }
+
+  Color outlineBorderColor(BuildContext context) {
+    switch (this) {
+      case BadgeColor.gray:
+        return context.color.utility(UtilityColorType.gray300);
+      case BadgeColor.brand:
+        return context.color.utility(UtilityColorType.brand600);
+      case BadgeColor.error:
+        return context.color.utility(UtilityColorType.error600);
+      case BadgeColor.warning:
+        return context.color.utility(UtilityColorType.warning600);
+      case BadgeColor.success:
+        return context.color.utility(UtilityColorType.success600);
+      case BadgeColor.blueLight:
+        return context.color.utility(UtilityColorType.blueLight600);
+      case BadgeColor.blue:
+        return context.color.utility(UtilityColorType.blue600);
+      case BadgeColor.indigo:
+        return context.color.utility(UtilityColorType.indigo600);
+      case BadgeColor.purple:
+        return context.color.utility(UtilityColorType.purple600);
+      case BadgeColor.pink:
+        return context.color.utility(UtilityColorType.pink600);
+      case BadgeColor.orange:
+        return context.color.utility(UtilityColorType.orange600);
+      case BadgeColor.blueGray:
+        return context.color.utility(UtilityColorType.grayBlue600);
+      case BadgeColor.grayBlue:
+        return context.color.utility(UtilityColorType.grayBlue600);
+    }
+  }
 }
 
 extension BadgeTypeX on BadgeType {
@@ -169,6 +246,28 @@ extension BadgeTypeX on BadgeType {
       case BadgeType.badgeColor:
       case BadgeType.badgeModern:
         return OneRadius.sm;
+    }
+  }
+
+  double get borderWidth {
+    switch (this) {
+      case BadgeType.pillColor:
+      case BadgeType.badgeColor:
+      case BadgeType.badgeModern:
+        return 1.0;
+      case BadgeType.pillOutline:
+        return 1.5;
+    }
+  }
+
+  bool get hasBackground {
+    switch (this) {
+      case BadgeType.pillColor:
+      case BadgeType.badgeColor:
+      case BadgeType.badgeModern:
+        return true;
+      case BadgeType.pillOutline:
+        return false;
     }
   }
 }

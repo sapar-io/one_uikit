@@ -215,7 +215,7 @@ class OneGradients {
   static const LinearGradient linear09 = LinearGradient(
     begin: Alignment.bottomLeft,
     end: Alignment.topRight,
-    colors: [Color(0xFFA6C0FE), Color(0xFFFFFFF1EB)],
+    colors: [Color(0xFFA6C0FE), Color(0xFFFFF1EB)],
   );
 
   static const LinearGradient linear10 = LinearGradient(

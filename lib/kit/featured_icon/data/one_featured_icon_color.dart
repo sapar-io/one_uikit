@@ -85,34 +85,34 @@ extension OneFeaturedIconColorExtension on OneFeaturedIconColor {
   }
 
   /// Get utility color for gradient outer background (50 shade)
-  Color gradientOuterBackground() {
+  Color gradientOuterBackground(BuildContext context) {
     switch (this) {
       case OneFeaturedIconColor.brand:
-        return OneColors.brand[50]!;
+        return context.color.utility(UtilityColorType.brand50);
       case OneFeaturedIconColor.gray:
-        return OneColors.grayLightMode[50]!;
+        return context.color.utility(UtilityColorType.gray50);
       case OneFeaturedIconColor.error:
-        return OneColors.error[50]!;
+        return context.color.utility(UtilityColorType.error50);
       case OneFeaturedIconColor.warning:
-        return OneColors.warning[50]!;
+        return context.color.utility(UtilityColorType.warning50);
       case OneFeaturedIconColor.success:
-        return OneColors.success[50]!;
+        return context.color.utility(UtilityColorType.success50);
     }
   }
 
   /// Get utility color for gradient border (200 shade)
-  Color gradientBorder() {
+  Color gradientBorder(BuildContext context) {
     switch (this) {
       case OneFeaturedIconColor.brand:
-        return OneColors.brand[200]!;
+        return context.color.utility(UtilityColorType.brand200);
       case OneFeaturedIconColor.gray:
-        return OneColors.grayLightMode[200]!;
+        return context.color.utility(UtilityColorType.gray200);
       case OneFeaturedIconColor.error:
-        return OneColors.error[200]!;
+        return context.color.utility(UtilityColorType.error200);
       case OneFeaturedIconColor.warning:
-        return OneColors.warning[200]!;
+        return context.color.utility(UtilityColorType.warning200);
       case OneFeaturedIconColor.success:
-        return OneColors.success[200]!;
+        return context.color.utility(UtilityColorType.success200);
     }
   }
 }
