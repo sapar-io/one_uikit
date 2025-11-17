@@ -331,10 +331,14 @@ enum ShadowColorType {
   md2,
   lg1,
   lg2,
+  lg3,
   xl1,
   xl2,
-  xxl,
-  xxxl,
+  xl3,
+  xxl1,
+  xxl2,
+  xxxl1,
+  xxxl2,
   skeumorphicInner,
   skeumorphicInnerBorder,
 }
@@ -1534,29 +1538,41 @@ class OneColorsHelper {
             .withValues(alpha: 0.1);
       case ShadowColorType.sm2:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
-            .withValues(alpha: 0.06);
+            .withValues(alpha: 0.10);
       case ShadowColorType.md1:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
-            .withValues(alpha: 0.1);
+            .withValues(alpha: 0.06);
       case ShadowColorType.md2:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
-            .withValues(alpha: 0.06);
+            .withValues(alpha: 0.10);
       case ShadowColorType.lg1:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
-            .withValues(alpha: 0.08);
+            .withValues(alpha: 0.04);
       case ShadowColorType.lg2:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
             .withValues(alpha: 0.03);
-      case ShadowColorType.xl1:
+      case ShadowColorType.lg3:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
             .withValues(alpha: 0.08);
+      case ShadowColorType.xl1:
+        return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
+            .withValues(alpha: 0.04);
       case ShadowColorType.xl2:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
             .withValues(alpha: 0.03);
-      case ShadowColorType.xxl:
+      case ShadowColorType.xl3:
+        return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
+            .withValues(alpha: 0.08);
+      case ShadowColorType.xxl1:
+        return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
+            .withValues(alpha: 0.04);
+      case ShadowColorType.xxl2:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
             .withValues(alpha: 0.18);
-      case ShadowColorType.xxxl:
+      case ShadowColorType.xxxl1:
+        return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
+            .withValues(alpha: 0.04);
+      case ShadowColorType.xxxl2:
         return getUtilityColor(UtilityColorType.gray900, isLight, brandColor)
             .withValues(alpha: 0.14);
       case ShadowColorType.skeumorphicInner:

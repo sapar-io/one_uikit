@@ -52,13 +52,14 @@ class OneShadow {
             color: OneColorsHelper.shadow(
                 ShadowColorType.sm1, isLight, brandColor),
             offset: const Offset(0, 1),
-            blurRadius: 3,
+            blurRadius: 2,
+            spreadRadius: -1,
           ),
           BoxShadow(
             color: OneColorsHelper.shadow(
                 ShadowColorType.sm2, isLight, brandColor),
             offset: const Offset(0, 1),
-            blurRadius: 2,
+            blurRadius: 3,
           ),
         ];
       case OneShadowSize.md:
@@ -66,16 +67,16 @@ class OneShadow {
           BoxShadow(
             color: OneColorsHelper.shadow(
                 ShadowColorType.md1, isLight, brandColor),
-            offset: const Offset(0, 4),
-            blurRadius: 8,
+            offset: const Offset(0, 2),
+            blurRadius: 4,
             spreadRadius: -2,
           ),
           BoxShadow(
             color: OneColorsHelper.shadow(
                 ShadowColorType.md2, isLight, brandColor),
-            offset: const Offset(0, 2),
-            blurRadius: 4,
-            spreadRadius: -2,
+            offset: const Offset(0, 4),
+            blurRadius: 6,
+            spreadRadius: -1,
           ),
         ];
       case OneShadowSize.lg:
@@ -83,9 +84,9 @@ class OneShadow {
           BoxShadow(
             color: OneColorsHelper.shadow(
                 ShadowColorType.lg1, isLight, brandColor),
-            offset: const Offset(0, 12),
-            blurRadius: 16,
-            spreadRadius: -4,
+            offset: const Offset(0, 2),
+            blurRadius: 2,
+            spreadRadius: -1,
           ),
           BoxShadow(
             color: OneColorsHelper.shadow(
@@ -94,15 +95,22 @@ class OneShadow {
             blurRadius: 6,
             spreadRadius: -2,
           ),
+          BoxShadow(
+            color: OneColorsHelper.shadow(
+                ShadowColorType.lg3, isLight, brandColor),
+            offset: const Offset(0, 12),
+            blurRadius: 16,
+            spreadRadius: -4,
+          ),
         ];
       case OneShadowSize.xl:
         return [
           BoxShadow(
             color: OneColorsHelper.shadow(
                 ShadowColorType.xl1, isLight, brandColor),
-            offset: const Offset(0, 20),
-            blurRadius: 24,
-            spreadRadius: -4,
+            offset: const Offset(0, 3),
+            blurRadius: 3,
+            spreadRadius: -1.5,
           ),
           BoxShadow(
             color: OneColorsHelper.shadow(
@@ -111,12 +119,26 @@ class OneShadow {
             blurRadius: 8,
             spreadRadius: -4,
           ),
+          BoxShadow(
+            color: OneColorsHelper.shadow(
+                ShadowColorType.xl3, isLight, brandColor),
+            offset: const Offset(0, 20),
+            blurRadius: 24,
+            spreadRadius: -4,
+          ),
         ];
       case OneShadowSize.xxl:
         return [
           BoxShadow(
             color: OneColorsHelper.shadow(
-                ShadowColorType.xxl, isLight, brandColor),
+                ShadowColorType.xxl1, isLight, brandColor),
+            offset: const Offset(0, 4),
+            blurRadius: 4,
+            spreadRadius: -2,
+          ),
+          BoxShadow(
+            color: OneColorsHelper.shadow(
+                ShadowColorType.xxl2, isLight, brandColor),
             offset: const Offset(0, 24),
             blurRadius: 48,
             spreadRadius: -12,
@@ -126,7 +148,14 @@ class OneShadow {
         return [
           BoxShadow(
             color: OneColorsHelper.shadow(
-                ShadowColorType.xxxl, isLight, brandColor),
+                ShadowColorType.xxxl1, isLight, brandColor),
+            offset: const Offset(0, 5),
+            blurRadius: 5,
+            spreadRadius: -2.5,
+          ),
+          BoxShadow(
+            color: OneColorsHelper.shadow(
+                ShadowColorType.xxxl2, isLight, brandColor),
             offset: const Offset(0, 32),
             blurRadius: 64,
             spreadRadius: -12,
