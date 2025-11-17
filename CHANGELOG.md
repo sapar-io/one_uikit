@@ -1,3 +1,14 @@
+## 0.2.2
+
+* 🔧 **BREAKING**: Aligned typography system with Untitled UI Figma Kit specifications
+* Removed non-standard font weights: Light (w300) and Black (w900)
+* Now supports only Figma-specified weights: Regular (400), Medium (500), Semibold (600), Bold (700)
+* Removed textXxs style (13px) - not part of Figma specification
+* Added comprehensive documentation comments for all 12 text styles
+* All typography styles now include font size, line height, and letter spacing from Figma
+* Set fontFamily to 'Inter' to match Figma typography system
+* Typography now includes 6 Display styles (2xl to xs) and 5 Text styles (xl to xs)
+
 ## 0.2.1
 
 * 📝 **IMPROVED**: Enhanced color variables with comprehensive Figma documentation comments
