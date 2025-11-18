@@ -686,7 +686,10 @@ Widget _buildAvatar(OneTagSize size) {
     decoration: BoxDecoration(
       color: Colors.blue[200],
       shape: BoxShape.circle,
-      border: Border.all(color: Colors.white.withOpacity(0.1), width: 0.33),
+      border: Border.all(
+        color: Colors.white.withValues(alpha: 0.1),
+        width: 0.33,
+      ),
     ),
   );
 }

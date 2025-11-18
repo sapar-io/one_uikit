@@ -52,7 +52,7 @@ class OneCardContent extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: isBottomPadding ? OneSpace.s12 : 0),
       child: OneCard(
-        isSelected: isSelected,
+        focusRing: isSelected ? OneCardFocusRing.brand : OneCardFocusRing.none,
         onTap: onTap,
         onDoubleTap: onDoubleTap,
         onLongPress: onLongPress,

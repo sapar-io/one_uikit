@@ -39,7 +39,7 @@ class _OneTagState extends State<OneTag> {
               boxShadow: _isFocused && isClickable
                   ? [
                       BoxShadow(
-                        color: context.color.utility(UtilityColorType.brand200).withOpacity(0.5),
+                        color: context.color.utility(UtilityColorType.brand200).withValues(alpha: 0.5),
                         spreadRadius: 0,
                         blurRadius: 0,
                         offset: const Offset(0, 0),

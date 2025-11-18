@@ -17,6 +17,7 @@ export 'kit/button/one_button.dart';
 export 'kit/badge/one_badge.dart';
 export 'kit/badge/one_badge_with_text.dart';
 export 'kit/badge/one_badge_group.dart';
+export 'kit/progress_bar/one_progress_bar.dart';
 export 'kit/card/one_card.dart';
 export 'kit/card/one_card_content.dart';
 export 'kit/empty/one_empty.dart';
