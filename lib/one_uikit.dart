@@ -17,6 +17,7 @@ export 'kit/button/one_button.dart';
 export 'kit/badge/one_badge.dart';
 export 'kit/badge/one_badge_with_text.dart';
 export 'kit/badge/one_badge_group.dart';
+export 'kit/tab_button/one_tab_button.dart';
 export 'kit/progress_bar/one_progress_bar.dart';
 export 'kit/card/one_card.dart';
 export 'kit/card/one_card_content.dart';
@@ -24,6 +25,8 @@ export 'kit/empty/one_empty.dart';
 export 'kit/featured_icon/one_featured_icon.dart';
 export 'kit/nav_icon/one_nav_icon.dart';
 export 'kit/nav_icon/one_nav_icon_with_text.dart';
+export 'kit/tag/one_tag.dart';
+export 'kit/metric_card/one_metric_card.dart';
 
 // * Kit Fields
 export 'kit/field/one_multi_dropdown_field.dart';

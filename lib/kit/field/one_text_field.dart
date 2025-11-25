@@ -26,6 +26,7 @@ class OneTextField extends StatefulWidget {
   final String? prefixText;
   final int? maxLines;
   final int? minLines;
+  final String? initialValue;
 
   const OneTextField({
     super.key,
@@ -52,6 +53,7 @@ class OneTextField extends StatefulWidget {
     this.prefixText,
     this.maxLines,
     this.minLines,
+    this.initialValue,
   });
 
   @override
@@ -122,7 +124,9 @@ class _OneTextFieldState extends State<OneTextField> {
             inputFormatters:
                 widget.inputFormatter != null ? [widget.inputFormatter!] : null,
             keyboardType:
-                widget.isMultiline ? TextInputType.multiline : widget.keyboardType,
+                widget.isMultiline
+                    ? TextInputType.multiline
+                    : widget.keyboardType,
             validator: widget.validator,
             obscureText: widget.isPassword,
             autocorrect: widget.autocorrect,
@@ -133,10 +137,12 @@ class _OneTextFieldState extends State<OneTextField> {
             onChanged: widget.onChanged,
             onFieldSubmitted: widget.onFieldSubmitted,
             style: context.typography.textMdRegular.copyWith(
-              color: isDisabled
-                  ? context.color.text(TextColorType.disabled)
-                  : context.color.text(TextColorType.primary),
+              color:
+                  isDisabled
+                      ? context.color.text(TextColorType.disabled)
+                      : context.color.text(TextColorType.primary),
             ),
+            initialValue: widget.initialValue,
             decoration: InputDecoration(
               hintText: widget.hintText,
               hintStyle: context.typography.textMdRegular.copyWith(
@@ -149,12 +155,19 @@ class _OneTextFieldState extends State<OneTextField> {
                 color: context.color.foreground(ForegroundColorType.tertiary),
               ),
               filled: true,
-              fillColor: isDisabled
-                  ? context.color.background(BackgroundColorType.disabledSubtle)
-                  : context.color.background(BackgroundColorType.primary),
-              contentPadding: widget.isMultiline
-                  ? const EdgeInsets.symmetric(horizontal: 14, vertical: 12)
-                  : const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              fillColor:
+                  isDisabled
+                      ? context.color.background(
+                        BackgroundColorType.disabledSubtle,
+                      )
+                      : context.color.background(BackgroundColorType.primary),
+              contentPadding:
+                  widget.isMultiline
+                      ? const EdgeInsets.symmetric(horizontal: 14, vertical: 12)
+                      : const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 10,
+                      ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
@@ -165,18 +178,20 @@ class _OneTextFieldState extends State<OneTextField> {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: hasError
-                      ? context.color.border(BorderColorType.errorSubtle)
-                      : context.color.border(BorderColorType.primary),
+                  color:
+                      hasError
+                          ? context.color.border(BorderColorType.errorSubtle)
+                          : context.color.border(BorderColorType.primary),
                   width: 1,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: hasError
-                      ? context.color.border(BorderColorType.error)
-                      : context.color.border(BorderColorType.brand),
+                  color:
+                      hasError
+                          ? context.color.border(BorderColorType.error)
+                          : context.color.border(BorderColorType.brand),
                   width: 2,
                 ),
               ),
@@ -213,9 +228,10 @@ class _OneTextFieldState extends State<OneTextField> {
             child: Text(
               widget.errorText ?? widget.helperText ?? '',
               style: context.typography.textSmRegular.copyWith(
-                color: hasError
-                    ? context.color.text(TextColorType.errorPrimary)
-                    : context.color.text(TextColorType.tertiary),
+                color:
+                    hasError
+                        ? context.color.text(TextColorType.errorPrimary)
+                        : context.color.text(TextColorType.tertiary),
               ),
             ),
           ),

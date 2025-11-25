@@ -10,6 +10,7 @@ class OneFloating extends StatelessWidget {
     this.heroTag,
     this.isLoading = false,
     this.isGray = false,
+    this.text,
   });
 
   final dynamic icon;
@@ -18,6 +19,7 @@ class OneFloating extends StatelessWidget {
   final String? heroTag;
   final bool isLoading;
   final bool isGray;
+  final String? text;
 
   @override
   Widget build(BuildContext context) {
@@ -28,28 +30,47 @@ class OneFloating extends StatelessWidget {
       return FloatingActionButton.small(
         heroTag: heroTag,
         onPressed: isLoading ? null : onPressed,
-        backgroundColor:
-            context.color.background(BackgroundColorType.quaternary),
-        child: isLoading
-            ? SizedBox(
-                width: 16,
-                height: 16,
-                child: CircularProgressIndicator(color: iconColor),
-              )
-            : OneIcons.get(icon ?? GeneralIcon.plus, color: iconColor),
+        backgroundColor: context.color.background(
+          BackgroundColorType.quaternary,
+        ),
+        child:
+            isLoading
+                ? SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: CircularProgressIndicator(color: iconColor),
+                )
+                : OneIcons.get(icon ?? GeneralIcon.plus, color: iconColor),
+      );
+    }
+
+    if (text != null) {
+      return FloatingActionButton.extended(
+        heroTag: heroTag,
+        onPressed: isLoading ? null : onPressed,
+        label: Text(text!),
+        icon:
+            isLoading
+                ? const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(color: Colors.white),
+                )
+                : OneIcons.get(icon ?? GeneralIcon.plus, color: Colors.white),
       );
     }
 
     return FloatingActionButton(
       heroTag: heroTag,
       onPressed: isLoading ? null : onPressed,
-      child: isLoading
-          ? const SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(color: Colors.white),
-            )
-          : OneIcons.get(icon ?? GeneralIcon.plus, color: Colors.white),
+      child:
+          isLoading
+              ? const SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(color: Colors.white),
+              )
+              : OneIcons.get(icon ?? GeneralIcon.plus, color: Colors.white),
     );
   }
 }

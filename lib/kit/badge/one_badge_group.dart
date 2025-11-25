@@ -71,21 +71,28 @@ class OneBadgeGroup extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Badge
-            OneBadge(
-              viewModel: BadgeViewModel(
-                size: badgeSize,
-                type: badgeType,
-                icon: BadgeIcon.text,
-                color: badgeColor,
-                text: badgeText,
+            Flexible(
+              flex: 0,
+              child: OneBadge(
+                viewModel: BadgeViewModel(
+                  size: badgeSize,
+                  type: badgeType,
+                  icon: BadgeIcon.text,
+                  color: badgeColor,
+                  text: badgeText,
+                ),
               ),
             ),
             const SizedBox(width: OneSpace.s8),
             // Text
-            Text(
-              text,
-              style: context.typography.textXsMedium.copyWith(
-                color: badgeColor.textColor(context),
+            Flexible(
+              child: Text(
+                text,
+                style: context.typography.textXsMedium.copyWith(
+                  color: badgeColor.textColor(context),
+                ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
             ),
             // Optional icon

@@ -21,7 +21,7 @@ class OneFieldLabel extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Text(
             label,
@@ -38,10 +38,7 @@ class OneFieldLabel extends StatelessWidget {
               ),
             ),
           ],
-          if (tooltip != null) ...[
-            const SizedBox(width: 4),
-            tooltip!,
-          ],
+          if (tooltip != null) ...[const SizedBox(width: 4), tooltip!],
         ],
       ),
     );

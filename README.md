@@ -449,6 +449,111 @@ OneCardContent(
 )
 ```
 
+### OneMetricCard
+
+**Карточка метрик с различными вариантами отображения**
+
+```dart
+// Простая карточка
+OneMetricCard(
+  viewModel: MetricCardViewModel(
+    title: 'Views 24 hours',
+    value: '2,000',
+    trend: MetricCardTrend(
+      percentage: '100%',
+      isPositive: true,
+    ),
+    type: MetricCardType.simple,
+  ),
+)
+
+// С иконкой
+OneMetricCard(
+  viewModel: MetricCardViewModel(
+    title: 'Views 24 hours',
+    value: '2,000',
+    trend: MetricCardTrend(
+      percentage: '100%',
+      text: 'vs last month',
+      isPositive: true,
+    ),
+    type: MetricCardType.icon2,
+    featuredIcon: OneFeaturedIcon(
+      icon: GeneralIcon.trendUp02,
+      type: FeaturedIconType.lightCircle,
+      color: FeaturedIconColor.success,
+    ),
+  ),
+)
+
+// С графиком
+OneMetricCard(
+  viewModel: MetricCardViewModel(
+    title: 'Views 24 hours',
+    value: '2,000',
+    trend: MetricCardTrend(
+      percentage: '100%',
+      text: 'vs last month',
+      isPositive: true,
+    ),
+    type: MetricCardType.chart1,
+    chart: YourChartWidget(),
+  ),
+)
+
+// С действиями
+OneMetricCard(
+  viewModel: MetricCardViewModel(
+    title: 'Views 24 hours',
+    value: '2,000',
+    trend: MetricCardTrend(
+      percentage: '100%',
+      isPositive: true,
+    ),
+    type: MetricCardType.simple,
+    showDropdownIcon: true,
+    onDropdownTap: () {},
+    actions: [
+      TextButton(
+        onPressed: () {},
+        child: Text('View report'),
+      ),
+    ],
+  ),
+)
+```
+
+**Параметры MetricCardViewModel:**
+- `title` - заголовок (например, "Views 24 hours")
+- `value` - основное значение (например, "2,000")
+- `trend` - информация о тренде (процент, текст, положительный/отрицательный)
+- `type` - тип отображения (simple, icon1-4, chart1-4)
+- `size` - размер (mobile, desktop)
+- `featuredIcon` - декоративная иконка (опционально)
+- `chart` - виджет графика (опционально)
+- `actions` - кнопки действий (опционально)
+- `showDropdownIcon` - показывать меню (три точки)
+- `onDropdownTap` - обработчик нажатия на меню
+
+**Типы карточек:**
+- `simple` - title, value, trend badge
+- `icon1` - иконка вверху, title, value, trend
+- `icon2` - иконка + title в ряд, value, trend с текстом
+- `icon3` - маленькая иконка слева, контент справа
+- `icon4` - title сверху, value + trend
+- `chart1` - title, value, trend + текст, график снизу
+- `chart2` - иконка + title, value + trend + график справа
+- `chart3` - иконка + title, value, trend, area chart
+- `chart4` - title, value + trend, wave chart
+
+**Размеры:** mobile, desktop
+
+**MetricCardTrend параметры:**
+- `percentage` - процент (например, "100%")
+- `text` - дополнительный текст (например, "vs last month")
+- `isPositive` - положительный (зеленый) или отрицательный (красный)
+- `displayType` - стиль отображения (badge, inline, inlineWithText)
+
 ---
 
 ### OneEmpty

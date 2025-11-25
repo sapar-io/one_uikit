@@ -4,11 +4,7 @@ import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
 class CarouselScreen extends StatefulWidget {
-  const CarouselScreen({
-    super.key,
-    required this.images,
-    required this.index,
-  });
+  const CarouselScreen({super.key, required this.images, required this.index});
 
   final List<String> images;
   final String index;
@@ -48,12 +44,10 @@ class _CarouselScreenState extends State<CarouselScreen> {
             scrollPhysics: const BouncingScrollPhysics(),
             builder: (BuildContext context, int index) {
               return PhotoViewGalleryPageOptions(
-                errorBuilder: (context, error, stackTrace) => Center(
-                  child: OneError(
-                    error: error,
-                    stackTrace: stackTrace,
-                  ),
-                ),
+                errorBuilder:
+                    (context, error, stackTrace) => Center(
+                      child: OneError(error: error, stackTrace: stackTrace),
+                    ),
                 imageProvider: NetworkImage(widget.images[index]),
                 initialScale: PhotoViewComputedScale.contained,
                 heroAttributes: PhotoViewHeroAttributes(tag: index),
@@ -61,18 +55,20 @@ class _CarouselScreenState extends State<CarouselScreen> {
             },
             itemCount: widget.images.length,
             onPageChanged: (index) => setState(() => _currentIndex = index),
-            loadingBuilder: (context, event) => Center(
-              child: SizedBox(
-                width: 20.0,
-                height: 20.0,
-                child: CircularProgressIndicator(
-                  value: event == null
-                      ? 0
-                      : event.cumulativeBytesLoaded /
-                          (event.expectedTotalBytes ?? 1).toInt(),
+            loadingBuilder:
+                (context, event) => Center(
+                  child: SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                    child: CircularProgressIndicator(
+                      value:
+                          event == null
+                              ? 0
+                              : event.cumulativeBytesLoaded /
+                                  (event.expectedTotalBytes ?? 1).toInt(),
+                    ),
+                  ),
                 ),
-              ),
-            ),
             pageController: _controller,
           ),
           // * Footer Indicators
@@ -115,9 +111,10 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 width: OneSpace.s16,
                 height: OneSpace.s4,
                 decoration: BoxDecoration(
-                  color: _currentIndex == index
-                      ? Colors.white
-                      : Colors.white.withValues(alpha: 0.5),
+                  color:
+                      _currentIndex == index
+                          ? Colors.white
+                          : Colors.white.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(OneSpace.s4),
                 ),
               ),

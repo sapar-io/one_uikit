@@ -55,26 +55,31 @@ class OneCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OneAdaptive(
-      desktop: (_) => _buildCard(
-        context: context,
-        padding: padding ?? const EdgeInsets.all(OneGrid.desktopPadding),
-      ),
-      tablet: (_) => _buildCard(
-        context: context,
-        padding: padding ??
-            const EdgeInsets.symmetric(
-              vertical: OneGrid.mobileVerticalPadding,
-              horizontal: OneGrid.mobilePadding,
-            ),
-      ),
-      mobile: (_) => _buildCard(
-        context: context,
-        padding: padding ??
-            const EdgeInsets.symmetric(
-              vertical: OneGrid.mobileVerticalPadding,
-              horizontal: OneGrid.mobilePadding,
-            ),
-      ),
+      desktop:
+          (_) => _buildCard(
+            context: context,
+            padding: padding ?? const EdgeInsets.all(OneGrid.desktopPadding),
+          ),
+      tablet:
+          (_) => _buildCard(
+            context: context,
+            padding:
+                padding ??
+                const EdgeInsets.symmetric(
+                  vertical: OneGrid.mobileVerticalPadding,
+                  horizontal: OneGrid.mobilePadding,
+                ),
+          ),
+      mobile:
+          (_) => _buildCard(
+            context: context,
+            padding:
+                padding ??
+                const EdgeInsets.symmetric(
+                  vertical: OneGrid.mobileVerticalPadding,
+                  horizontal: OneGrid.mobilePadding,
+                ),
+          ),
     );
   }
 
@@ -87,8 +92,12 @@ class OneCard extends StatelessWidget {
 
     // Focus ring colors
     final focusRingColor = switch (focusRing) {
-      OneCardFocusRing.brand => context.color.utility(UtilityColorType.brand500),
-      OneCardFocusRing.error => context.color.utility(UtilityColorType.error500),
+      OneCardFocusRing.brand => context.color.utility(
+        UtilityColorType.brand500,
+      ),
+      OneCardFocusRing.error => context.color.utility(
+        UtilityColorType.error500,
+      ),
       OneCardFocusRing.none => null,
     };
 
@@ -99,20 +108,12 @@ class OneCard extends StatelessWidget {
     if (hasFocusRing && focusRingColor != null) {
       // Outer focus ring (4px)
       boxShadows.add(
-        BoxShadow(
-          color: focusRingColor,
-          spreadRadius: 4,
-          blurRadius: 0,
-        ),
+        BoxShadow(color: focusRingColor, spreadRadius: 4, blurRadius: 0),
       );
-      // White separator (2px)
-      boxShadows.add(
-        BoxShadow(
-          color: Colors.white,
-          spreadRadius: 2,
-          blurRadius: 0,
-        ),
-      );
+      //   // White separator (2px)
+      //   boxShadows.add(
+      //     BoxShadow(color: Colors.white, spreadRadius: 2, blurRadius: 0),
+      //   );
     }
 
     // Add card shadow
@@ -134,20 +135,19 @@ class OneCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(radius),
           child: Ink(
             decoration: BoxDecoration(
-              color: backgroundColor ??
-                  context.color.background(BackgroundColorType.primaryAlt),
+              color:
+                  backgroundColor ??
+                  context.color.background(BackgroundColorType.primary),
               borderRadius: BorderRadius.circular(radius),
               // Border as outline (inside)
               border: Border.all(
-                color: borderColor ??
+                color:
+                    borderColor ??
                     context.color.border(BorderColorType.secondary),
                 width: 1,
               ),
             ),
-            child: Container(
-              padding: padding,
-              child: child,
-            ),
+            child: Container(padding: padding, child: child),
           ),
         ),
       ),
